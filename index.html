@@ -1,535 +1,1540 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Layung Siti Nurazizah</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .profile-container {
-            position: relative;
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 2;
-            margin-top: 30px;
-        }
-        .profile-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            z-index: 1;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .section-title {
-            color: #2c3e50;
-            border-bottom: 3px solid #c04434;
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+
+```
+<title>Portfolio - Layung Siti Nurazizah</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #343a40;
+    }
+
+    /* =========================
+       COLOR CUSTOM
+    ========================== */
+    :root {
+        --primary-color: #c04434;
+        --primary-dark: #a93629;
+        --light-bg: #f8f9fa;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+    .bg-primary-custom {
+        background-color: var(--primary-color) !important;
+    }
+
+    .text-primary-custom {
+        color: var(--primary-color) !important;
+    }
+
+    .btn-primary-custom {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+    }
+
+    .btn-primary-custom:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        color: white;
+    }
+
+    .btn-outline-primary-custom {
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+    }
+
+    .btn-outline-primary-custom:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    /* =========================
+       PROFILE
+    ========================== */
+    .profile-section {
+        padding: 50px 0;
+    }
+
+    .profile-info i {
+        font-size: 1.4rem;
+        min-width: 30px;
+    }
+
+    .info-box {
+        background-color: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .info-box p {
+        margin-top: 25px;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .info-label {
+        font-weight: 600;
+        color: #343a40;
+    }
+
+    /* =========================
+       HERO / JUMBOTRON
+    ========================== */
+    #home.jumbotron {
+        background-image: url('unsika.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 45px 0;
+        border-radius: 15px;
+        margin-bottom: 30px;
+    }
+
+    #home .container {
+        background-color: rgba(0, 0, 0, 0.55);
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    #home img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    #home h1 {
+        font-size: 2.2rem;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+
+    #home h3 {
+        font-size: 1.2rem;
+    }
+
+    /* =========================
+       SECTION TITLE
+    ========================== */
+    .section-title {
+        color: #2c3e50;
+        border-bottom: 3px solid var(--primary-color);
+        display: inline-block;
+        padding-bottom: 7px;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    /* =========================
+       CARD
+    ========================== */
+    .card {
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-header {
+        border: none;
+    }
+
+    .card-title {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    .card-text {
+        color: #6c757d;
+        font-size: 0.95rem;
+    }
+
+    /* =========================
+       GALLERY
+    ========================== */
+    .gallery-img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+    }
+
+    /* =========================
+       TIMELINE
+    ========================== */
+    .timeline {
+        position: relative;
+        padding-left: 30px;
+    }
+
+    .timeline:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary-color);
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        border: 2px solid white;
+        box-shadow: 0 0 0 2px var(--primary-color);
+    }
+
+    /* =========================
+       PUBLICATION
+    ========================== */
+    .publication-card {
+        border-left: 5px solid var(--primary-color);
+    }
+
+    .publication-index {
+        width: 35px;
+        height: 35px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    .sinta-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        background-color: var(--primary-color);
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .non-sinta-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        background-color: #6c757d;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .publication-title {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #343a40;
+        font-weight: 600;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-item i {
+        font-size: 1.3rem;
+        width: 35px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width: 768px) {
+
+        #home h1 {
+            font-size: 1.7rem;
         }
 
-        .jumbotron img {
-    width: 25%;
-    background-color:white;
-
-}
-        .card {
-            transition: transform 0.3s;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .skill-badge {
-            margin: 2px;
-            font-size: 0.9rem;
-        }
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #c04434;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 20px;
+        #home h3 {
+            font-size: 1rem;
         }
 
-         .profile-info i {
-    font-size: 1.4rem;
-  }
-
-  .text-primary-custom {
-    color:#c04434; /* Biru Bootstrap */
-  }
-
-  .info-box {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  }
-
-  .info-box p {
-    margin-top: 20px;
-    line-height: 1.7;
-    text-align: justify;
-  }
-
-  .info-label {
-    font-weight: 600;
-    color: #343a40;
-  }
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #c04434;
-            border: 2px solid white;
+        #home img {
+            width: 120px;
+            height: 120px;
         }
-        .bg-primary-custom {
-            background-color: #c04434 !important;
+
+        .info-box {
+            padding: 20px;
         }
-        .text-primary-custom {
-            color: #c04434 !important;
-        }
+
         .profile-section {
-            padding: 60px 0;
-            position: relative;
+            padding: 30px 0;
         }
-        #home.jumbotron {
-    background-image: url('unsika.jpg'); /* Ganti dengan background kamu */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px 0; /* Kurangi nilai padding atas dan bawah */
-  }
-  /* CSS untuk galeri card carousel */
 
+        .gallery-img {
+            height: 220px;
+        }
+    }
+</style>
+```
 
-.card-title {
-    color: #c04434;
-    font-weight: 600;
-}
-
-.card-text {
-    color: #6c757d;
-    font-size: 0.9rem;
-}
-
-  #home .container {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-  }
-
-  #home img {
-    width: 120px; /* perkecil ukuran gambar profil */
-  }
-
-  #home h1 {
-    font-size: 2rem; /* kecilkan ukuran teks */
-  }
-
-  #home h3 {
-    font-size: 1.2rem;
-  }
-    </style>
 </head>
+
 <body>
-    <!-- Header/Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Layung Siti Nurazizah</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#profile">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Pengalaman</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Kemampuan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Pendidikan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#achievements">Prestasi</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Profile Section -->
-    <section id="profile" class="profile-section">
-        <div class="container">
-            <div class="row align-items-center">
-           <div class="jumbotron" id="home">
-  <div class="container text-center">
-    <img src="profil_layung.jpg" class="rounded-circle img-thumbnail">
-    <h1 class="display-4">Layung Siti Nurazizah</h1>
-    <h3 class="lead">Mahasiswi Pendidikan Bahasa dan Sastra Indonesia</h3>
-  </div>
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom sticky-top shadow-sm">
+
+```
+<div class="container">
+
+    <a class="navbar-brand fw-bold" href="#">
+        Layung Siti Nurazizah
+    </a>
+
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="#profile">
+                    Profil
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#gallery">
+                    Galeri
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#experience">
+                    Pengalaman
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#skills">
+                    Kemampuan
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#education">
+                    Pendidikan
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#achievements">
+                    Publikasi
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">
+                    Kontak
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
 </div>
+```
 
+</nav>
+
+<!-- =====================================================
+     PROFILE SECTION
+===================================================== -->
+
+<section id="profile" class="profile-section">
+
+```
+<div class="container">
+
+    <!-- HERO -->
+    <div class="jumbotron" id="home">
+
+        <div class="container text-center">
+
+            <img
+                src="profil_layung.jpg"
+                class="rounded-circle img-thumbnail"
+                alt="Foto Layung Siti Nurazizah">
+
+            <h1>
+                Layung Siti Nurazizah
+            </h1>
+
+            <h3 class="lead">
+                Mahasiswi Pendidikan Bahasa dan Sastra Indonesia
+            </h3>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROFILE INFORMATION -->
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <div class="info-box">
+
+                <div class="profile-info mb-3 d-flex align-items-center">
+
+                    <i class="bi bi-book me-3 text-primary-custom"></i>
+
+                    <span>
+                        <span class="info-label">
+                            Program Studi:
+                        </span>
+                        Pendidikan Bahasa dan Sastra Indonesia
+                    </span>
 
                 </div>
-              <div class="col-md-8">
-  <div class="info-box">
-    <div class="profile-info mb-3 d-flex align-items-center">
-      <i class="bi bi-book me-3 text-primary-custom"></i>
-      <span><span class="info-label">Program Studi:</span> Pendidikan Bahasa dan Sastra Indonesia</span>
+
+
+                <div class="profile-info mb-3 d-flex align-items-center">
+
+                    <i class="bi bi-building me-3 text-primary-custom"></i>
+
+                    <span>
+                        <span class="info-label">
+                            Universitas:
+                        </span>
+                        Universitas Singaperbangsa Karawang
+                    </span>
+
+                </div>
+
+
+                <div class="profile-info mb-3 d-flex align-items-center">
+
+                    <i class="bi bi-mortarboard me-3 text-primary-custom"></i>
+
+                    <span>
+                        <span class="info-label">
+                            Pendidikan:
+                        </span>
+                        S1 Pendidikan Bahasa dan Sastra Indonesia
+                    </span>
+
+                </div>
+
+
+                <div class="profile-info mb-3 d-flex align-items-center">
+
+                    <i class="bi bi-phone me-3 text-primary-custom"></i>
+
+                    <span>
+                        <span class="info-label">
+                            Kontak:
+                        </span>
+                        0857-7510-4241
+                    </span>
+
+                </div>
+
+
+                <p>
+
+                    Lulusan S1 Pendidikan Bahasa dan Sastra Indonesia
+                    Universitas Singaperbangsa Karawang yang memiliki minat
+                    dan pengalaman dalam bidang pendidikan.
+
+                    Memiliki pengalaman mengajar pada jenjang SMP melalui
+                    kegiatan PLP, serta pengalaman praktik mengajar pada
+                    jenjang SD dan SMA.
+
+                    Selain itu, berpengalaman mengajar anak-anak di TPQ
+                    selama kegiatan Kuliah Kerja Nyata (KKN) dan memberikan
+                    les privat kepada anak usia pra-SD dan SD secara
+                    <i>door to door</i>.
+
+                    Terbiasa berinteraksi dengan peserta didik,
+                    menyampaikan materi sesuai usia dan kemampuan siswa,
+                    mengelola proses pembelajaran, serta menciptakan
+                    suasana belajar yang nyaman dan menyenangkan.
+
+                    Memiliki kemampuan komunikasi yang baik, bertanggung
+                    jawab, mampu bekerja sama, dan memiliki kemauan untuk
+                    terus belajar serta mengembangkan kemampuan di bidang
+                    pendidikan.
+
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="profile-info mb-3 d-flex align-items-center">
-      <i class="bi bi-building me-3 text-primary-custom"></i>
-      <span><span class="info-label">Universitas:</span> Universitas Singaperbangsa Karawang (Angkatan 2022)</span>
-    </div>
-
-    <div class="profile-info mb-3 d-flex align-items-center">
-      <i class="bi bi-phone me-3 text-primary-custom"></i>
-      <span><span class="info-label">Kontak:</span> 0857-7510-4241</span>
-    </div>
-
-    <p>
-      Saya adalah seorang <strong>mahasiswi aktif</strong> yang terlibat dalam berbagai kegiatan organisasi, public speaking, dan keprotokoleran.
-      Saya memiliki ketertarikan tinggi dalam bidang <strong>MC</strong>, <strong>moderator</strong>, serta <strong>editing video</strong>. 
-      Saya terbiasa bekerja dalam tim, mengelola acara formal, dan menjalankan peran sebagai <strong>Public Relations</strong> di berbagai kegiatan kampus.
-    </p>
-  </div>
 </div>
-            </div>
-        </div>
-    </section>
+```
 
-    <!-- Tambahkan ini setelah </div> penutup dari info-box (sebelum </div> penutup row) -->
-<!-- Tambahkan setelah section profile -->
-<section id="gallery" class="py-4">
-    <div class="container">
-        <h2 class="section-title fw-bold mb-4">Galeri Kegiatan</h2>
-        
-        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row justify-content-center">
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
-                                <img src="dutapendidikan.jpg" class="card-img-top" alt="Kegiatan 1" style="height: 200px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Duta Pendidikan FKIP Unsika</h5>
-                                 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
-                                <img src="bahasainggris.jpg" class="card-img-top" alt="Kegiatan 2" style="height: 200px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Tim Pondok Bahasa Ingrris Mr. Jo</h5>
-                      
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
-                                <img src="sbc.jpg" class="card-img-top" alt="Kegiatan 3" style="height: 200px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Marvellous Public Speaking SBC</h5>
-                          
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card h-100">
-                                <img src="protokoler.jpg" class="card-img-top" alt="Kegiatan 4" style="height: 200px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Diskusi Sastra</h5>
-                                    <p class="card-text">Tren Mutakhir Teori Sastra</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide kedua jika ada foto lebih banyak -->
-              
-                        <!-- Tambahkan card lainnya -->
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-    </div>
 </section>
 
-    <!-- Rest of your existing code remains the same -->
-    <!-- Experience Section -->
-    <section id="experience" class="py-5 bg-light">
-        <div class="container">
-      
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">Pengalaman Kerja</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <h5>Tim Marvellous Public Speaking SBC (2023)</h5>
-                                    <ul>
-                                        <li>Mendokumentasikan seluruh sesi pelatihan public speaking secara visual (foto & video)</li>
-                                        <li>Mengelola kebutuhan teknis selama acara, seperti sound system dan presentasi</li>
-                                        <li>Mengedit video kegiatan untuk keperluan publikasi dan dokumentasi resmi</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-item">
-                                    <h5>Tim Pondok Bahasa Inggris Mr. Jo Karawang (2025)</h5>
-                                    <ul>
-                                        <li>Mengedit video kegiatan untuk keperluan publikasi dan dokumentasi resmi</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-item">
-                                    <h5>Guru Les Privat Calistung (2025)</h5>
-                                    <ul>
-                                        <li>Mengajar siswa tingkat PAUD dan SD dalam membaca, menulis, dan berhitung.</li>
-                                    </ul>
-                                </div>
+<!-- =====================================================
+     GALLERY SECTION
+===================================================== -->
+
+<section id="gallery" class="py-5">
+
+```
+<div class="container">
+
+    <h2 class="section-title">
+        Galeri Kegiatan
+    </h2>
+
+    <div id="cardCarousel"
+         class="carousel slide"
+         data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <!-- SLIDE 1 -->
+            <div class="carousel-item active">
+
+                <div class="row justify-content-center">
+
+                    <!-- CARD 1 -->
+                    <div class="col-md-3 mb-4">
+
+                        <div class="card h-100">
+
+                            <img
+                                src="dutapendidikan.jpg"
+                                class="card-img-top gallery-img"
+                                alt="Duta Pendidikan FKIP Unsika">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">
+                                    Duta Pendidikan FKIP Unsika
+                                </h5>
+
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">Pengalaman Organisasi</h4>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">OSIS SMAN 1 Bojongmangu</li>
-                                <li class="list-group-item">HIMADIKSATRASIA FKIP Unsika – Sekretaris Bidang</li>
-                                <li class="list-group-item">Badan Legislatif Mahasiswa FKIP Unsika – Komisi A</li>
-                                <li class="list-group-item">UKM Duta, Humas, dan Protokoler FKIP Unsika – Sekretaris 1</li>
-                                <li class="list-group-item">UKM Protokoler Mahasiswa FKIP Unsika – Sekretaris 1</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5">
-        <div class="container">
-            <h2 class="section-title fw-bold mb-5">Kemampuan</h2>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">MC</h4>
                         </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Turnamen Sepak Bola Nasional di Yonif Para Raider 305 (2023)</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>PKKMB Unsika (2023 dan 2025)</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Maulid Nabi Muhammad SAW Unsika (2023)</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Rumah Belajar bersama Duta Bahasa Kab. Bekasi (2025)</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Talkshow Edukasi Bahaya Pinjol Ilegal & Judi Online</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Masa Orientasi pengurus Himpunan mahasiswa & Latihan Keorganisasian pengurus Ormawa FKIP Unsika</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Diskusi Sastra: Tren Mutakhir Teori Sastra</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Pengenalan dunia kerja PT PLN Enjiniring dan public speaking SMKN 34 Jakarta</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">Event Organizer</h4>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Seminar Internasional bersama Duta Besar Pakistan (2024)</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Peresmian Gedung Pertanian & Pascasarjana Unsika (2024)</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Forum Komunikasi FKIP se-Indonesia (2023)</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Pengukuhan PPG bagi Guru Dalam Jabatan (2024)</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Penyambutan Mahasiswa Inbound PMM Unsika (2024)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">Public Relations</h4>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Kegiatan KKN Desa Setialaksana Cabangbungin</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Sekolah Legislasi</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Jurnalistik PBSI Goes to Trans 7</li>
-                                <li><i class="bi bi-check-circle-fill text-primary-custom me-2"></i>Latihan Keorganisasian Pengurus</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education & Certification Section -->
-    <section id="education" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">Pendidikan</h4>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">PAUD Mawar Jaya</li>
-                                <li class="list-group-item">SDN Bojongmangu 02</li>
-                                <li class="list-group-item">SMPN 1 Bojongmangu</li>
-                                <li class="list-group-item">SMAN 1 Bojongmangu</li>
-                                <li class="list-group-item">Universitas Singaperbangsa Karawang (Prodi Pendidikan Bahasa dan Sastra Indonesia)</li>
-                            </ul>
-                        </div>
                     </div>
-                </div>
-                
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">Sertifikasi & Pelatihan</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <h5>Pelatihan Keprotokoleran</h5>
-                                <p class="mb-0">Diselenggarakan oleh Korps Protokoler Mahasiswa FKIP Unsika dan Korps Protokoler Mahasiswa Jawa Barat & DKI Jakarta</p>
+
+
+                    <!-- CARD 2 -->
+                    <div class="col-md-3 mb-4">
+
+                        <div class="card h-100">
+
+                            <img
+                                src="bahasainggris.jpg"
+                                class="card-img-top gallery-img"
+                                alt="Tim Pondok Bahasa Inggris">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">
+                                    Tim Pondok Bahasa Inggris Mr. Jo
+                                </h5>
+
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="py-5">
-        <div class="container">
-            <h2 class="section-title fw-bold mb-5">Prestasi & Publikasi</h2>
-            
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">Prestasi</h4>
                         </div>
-                        <div class="card-body">
-                            <h5>Penulis Terbaik Lomba Menulis Puisi Nasional "Luka"</h5>
-                            <p>Diselenggarakan oleh Otakata dan Sastrakita Indonesia</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-primary-custom text-white">
-                            <h4 class="mb-0">Publikasi Ilmiah</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <h5>SINTA 5:</h5>
-                                <p>"Perjuangan Tokoh Utama dalam Menggapai Impian pada Novel Home Sweet Loan karya Almira Bastari dan Sang Alkemis karya Paulo Coelho: Kajian Sastra Bandingan"</p>
-                            </div>
-                            <div>
-                                <h5>Non-SINTA:</h5>
-                                <p>"Analisis Framing Model Zhongdang Pan dan Gerald M. Kosicki terhadap Pemberitaan Peringatan Hari Guru Nasional 2024 pada Media Online Sokoguru.id dan MediaIndonesia.com"</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title fw-bold mb-5">Hubungi Saya</h2>
-            
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title text-primary-custom">Informasi Kontak</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-3"><i class="bi bi-telephone-fill me-2 text-primary-custom"></i> +6285775104241</li>
-                                <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-primary-custom"></i> email@example.com</li>
-                                <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-primary-custom"></i> Bekasi, Jawa Barat</li>
+                    </div>
+
+
+                    <!-- CARD 3 -->
+                    <div class="col-md-3 mb-4">
+
+                        <div class="card h-100">
+
+                            <img
+                                src="sbc.jpg"
+                                class="card-img-top gallery-img"
+                                alt="Marvellous Public Speaking SBC">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">
+                                    Marvellous Public Speaking SBC
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CARD 4 -->
+                    <div class="col-md-3 mb-4">
+
+                        <div class="card h-100">
+
+                            <img
+                                src="protokoler.jpg"
+                                class="card-img-top gallery-img"
+                                alt="Diskusi Sastra">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">
+                                    Diskusi Sastra
+                                </h5>
+
+                                <p class="card-text">
+                                    Tren Mutakhir Teori Sastra
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAROUSEL BUTTON -->
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#cardCarousel"
+            data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon"></span>
+
+            <span class="visually-hidden">
+                Previous
+            </span>
+
+        </button>
+
+
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#cardCarousel"
+            data-bs-slide="next">
+
+            <span class="carousel-control-next-icon"></span>
+
+            <span class="visually-hidden">
+                Next
+            </span>
+
+        </button>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     EXPERIENCE SECTION
+===================================================== -->
+
+<section id="experience" class="py-5 bg-light">
+
+```
+<div class="container">
+
+    <h2 class="section-title">
+        Pengalaman
+    </h2>
+
+    <div class="row">
+
+        <!-- PENGALAMAN KERJA -->
+        <div class="col-md-6 mb-4">
+
+            <div class="card h-100">
+
+                <div class="card-header bg-primary-custom text-white">
+
+                    <h4 class="mb-0">
+                        Pengalaman Kerja
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+
+                            <h5>
+                                Tim Marvellous Public Speaking SBC (2023)
+                            </h5>
+
+                            <ul>
+
+                                <li>
+                                    Mendokumentasikan seluruh sesi
+                                    pelatihan public speaking secara visual
+                                    berupa foto dan video.
+                                </li>
+
+                                <li>
+                                    Mengelola kebutuhan teknis selama acara,
+                                    seperti sound system dan presentasi.
+                                </li>
+
+                                <li>
+                                    Mengedit video kegiatan untuk keperluan
+                                    publikasi dan dokumentasi resmi.
+                                </li>
+
                             </ul>
-                            
-                            <div class="mt-4">
-                                <a href="#" class="btn btn-outline-primary-custom me-2"><i class="bi bi-instagram"></i></a>
-                            </div>
+
                         </div>
+
+
+                        <div class="timeline-item">
+
+                            <h5>
+                                Tim Pondok Bahasa Inggris Mr. Jo Karawang (2025)
+                            </h5>
+
+                            <ul>
+
+                                <li>
+                                    Mengedit video kegiatan untuk keperluan
+                                    publikasi dan dokumentasi resmi.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <h5>
+                                Guru Les Privat Calistung (2025)
+                            </h5>
+
+                            <ul>
+
+                                <li>
+                                    Mengajar siswa tingkat PAUD dan SD
+                                    dalam membaca, menulis, dan berhitung.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <h5>
+                                Pengalaman Mengajar melalui PLP
+                            </h5>
+
+                            <ul>
+
+                                <li>
+                                    Melaksanakan praktik mengajar pada
+                                    jenjang SMP.
+                                </li>
+
+                                <li>
+                                    Menyampaikan materi pembelajaran sesuai
+                                    dengan kebutuhan dan karakteristik peserta didik.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <h5>
+                                Praktik Mengajar SD dan SMA
+                            </h5>
+
+                            <ul>
+
+                                <li>
+                                    Melaksanakan praktik pembelajaran pada
+                                    jenjang SD dan SMA.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <h5>
+                                Pengajar TPQ melalui KKN
+                            </h5>
+
+                            <ul>
+
+                                <li>
+                                    Mengajar anak-anak di TPQ selama
+                                    kegiatan Kuliah Kerja Nyata (KKN).
+                                </li>
+
+                            </ul>
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-4 bg-primary-custom text-white">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2024 Layung Siti Nurazizah. All Rights Reserved.</p>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- PENGALAMAN ORGANISASI -->
+        <div class="col-md-6 mb-4">
+
+            <div class="card h-100">
+
+                <div class="card-header bg-primary-custom text-white">
+
+                    <h4 class="mb-0">
+                        Pengalaman Organisasi
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            OSIS SMAN 1 Bojongmangu
+                        </li>
+
+                        <li class="list-group-item">
+                            HIMADIKSATRASIA FKIP Unsika –
+                            Sekretaris Bidang
+                        </li>
+
+                        <li class="list-group-item">
+                            Badan Legislatif Mahasiswa FKIP Unsika –
+                            Komisi A
+                        </li>
+
+                        <li class="list-group-item">
+                            UKM Duta, Humas, dan Protokoler FKIP Unsika –
+                            Sekretaris 1
+                        </li>
+
+                        <li class="list-group-item">
+                            UKM Protokoler Mahasiswa FKIP Unsika –
+                            Sekretaris 1
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     SKILLS SECTION
+===================================================== -->
+
+<section id="skills" class="py-5">
+
+```
+<div class="container">
+
+    <h2 class="section-title">
+        Kemampuan
+    </h2>
+
+    <div class="row">
+
+        <!-- MC -->
+        <div class="col-md-4 mb-4">
+
+            <div class="card h-100">
+
+                <div class="card-header bg-primary-custom text-white">
+
+                    <h4 class="mb-0">
+                        MC
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <ul class="list-unstyled">
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Turnamen Sepak Bola Nasional di Yonif Para Raider 305 (2023)
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            PKKMB Unsika (2023 dan 2025)
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Maulid Nabi Muhammad SAW Unsika (2023)
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Rumah Belajar bersama Duta Bahasa Kab. Bekasi (2025)
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Talkshow Edukasi Bahaya Pinjol Ilegal & Judi Online
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Masa Orientasi Pengurus Himpunan Mahasiswa
+                            & Latihan Keorganisasian Pengurus Ormawa FKIP Unsika
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Diskusi Sastra: Tren Mutakhir Teori Sastra
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Pengenalan Dunia Kerja PT PLN Enjiniring
+                            dan Public Speaking SMKN 34 Jakarta
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT ORGANIZER -->
+        <div class="col-md-4 mb-4">
+
+            <div class="card h-100">
+
+                <div class="card-header bg-primary-custom text-white">
+
+                    <h4 class="mb-0">
+                        Event Organizer
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <ul class="list-unstyled">
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Seminar Internasional bersama Duta Besar Pakistan (2024)
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Peresmian Gedung Pertanian & Pascasarjana Unsika (2024)
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Forum Komunikasi FKIP se-Indonesia (2023)
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Pengukuhan PPG bagi Guru Dalam Jabatan (2024)
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Penyambutan Mahasiswa Inbound PMM Unsika (2024)
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PUBLIC RELATIONS -->
+        <div class="col-md-4 mb-4">
+
+            <div class="card h-100">
+
+                <div class="card-header bg-primary-custom text-white">
+
+                    <h4 class="mb-0">
+                        Public Relations
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <ul class="list-unstyled">
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Kegiatan KKN Desa Setialaksana Cabangbungin
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Sekolah Legislasi
+                        </li>
+
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Jurnalistik PBSI Goes to Trans 7
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
+                            Latihan Keorganisasian Pengurus
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     EDUCATION SECTION
+===================================================== -->
+
+<section id="education" class="py-5 bg-light">
+
+```
+<div class="container">
+
+    <div class="row">
+
+        <!-- PENDIDIKAN -->
+        <div class="col-md-6 mb-4">
+
+            <div class="card h-100">
+
+                <div class="card-header bg-primary-custom text-white">
+
+                    <h4 class="mb-0">
+                        Pendidikan
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            PAUD Mawar Jaya
+                        </li>
+
+                        <li class="list-group-item">
+                            SDN Bojongmangu 02
+                        </li>
+
+                        <li class="list-group-item">
+                            SMPN 1 Bojongmangu
+                        </li>
+
+                        <li class="list-group-item">
+                            SMAN 1 Bojongmangu
+                        </li>
+
+                        <li class="list-group-item">
+                            Universitas Singaperbangsa Karawang
+                            <br>
+                            <small class="text-muted">
+                                S1 Pendidikan Bahasa dan Sastra Indonesia
+                            </small>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERTIFIKASI -->
+        <div class="col-md-6 mb-4">
+
+            <div class="card h-100">
+
+                <div class="card-header bg-primary-custom text-white">
+
+                    <h4 class="mb-0">
+                        Sertifikasi & Pelatihan
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="mb-4">
+
+                        <h5 class="card-title">
+                            Pelatihan Keprotokoleran
+                        </h5>
+
+                        <p class="mb-0">
+
+                            Diselenggarakan oleh Korps Protokoler
+                            Mahasiswa FKIP Unsika dan Korps Protokoler
+                            Mahasiswa Jawa Barat & DKI Jakarta.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     PUBLICATION SECTION
+===================================================== -->
+
+<section id="achievements" class="py-5">
+
+```
+<div class="container">
+
+    <h2 class="section-title">
+        Publikasi Ilmiah
+    </h2>
+
+
+    <div class="row">
+
+        <div class="col-lg-10 mx-auto">
+
+
+            <!-- =========================
+                 SINTA 5 - 1
+            ========================== -->
+            <div class="card publication-card mb-4">
+
+                <div class="card-body">
+
+                    <div class="d-flex gap-3">
+
+                        <div class="publication-index">
+                            1
+                        </div>
+
+                        <div>
+
+                            <span class="sinta-badge">
+                                SINTA 5
+                            </span>
+
+                            <h5 class="publication-title">
+
+                                "Perjuangan Tokoh Utama dalam Menggapai
+                                Impian pada Novel Home Sweet Loan karya
+                                Almira Bastari dan Sang Alkemis karya
+                                Paulo Coelho: Kajian Sastra Bandingan"
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SINTA 5 - 2
+            ========================== -->
+            <div class="card publication-card mb-4">
+
+                <div class="card-body">
+
+                    <div class="d-flex gap-3">
+
+                        <div class="publication-index">
+                            2
+                        </div>
+
+                        <div>
+
+                            <span class="sinta-badge">
+                                SINTA 5
+                            </span>
+
+                            <h5 class="publication-title">
+
+                                "Analisis Wacana Kritis Model Teun A.
+                                Van Dijk Terhadap Pemberitaan Daring
+                                Mengenai Wacana Sistem Zonasi Oleh
+                                Nadiem Makarim di Portal Berita
+                                Metrotvnews.com"
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SINTA 4
+            ========================== -->
+            <div class="card publication-card mb-4">
+
+                <div class="card-body">
+
+                    <div class="d-flex gap-3">
+
+                        <div class="publication-index">
+                            3
+                        </div>
+
+                        <div>
+
+                            <span class="sinta-badge">
+                                SINTA 4
+                            </span>
+
+                            <h5 class="publication-title">
+
+                                Analisis Diksi dan Gaya Bahasa pada
+                                Spanduk Pedagang Kaki Lima di Desa
+                                Sukabungah Kabupaten Bekasi sebagai
+                                Rekomendasi Bahan Ajar Materi Bahasa
+                                Indonesia di SMP
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SINTA 3
+            ========================== -->
+            <div class="card publication-card mb-4">
+
+                <div class="card-body">
+
+                    <div class="d-flex gap-3">
+
+                        <div class="publication-index">
+                            4
+                        </div>
+
+                        <div>
+
+                            <span class="sinta-badge">
+                                SINTA 3
+                            </span>
+
+                            <h5 class="publication-title">
+
+                                Pembinaan Bahasa Indonesia melalui
+                                Literasi Interaktif di TBM Pustaka
+                                Berkiprah Kabupaten Karawang
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 NON SINTA
+            ========================== -->
+            <div class="card publication-card mb-4">
+
+                <div class="card-body">
+
+                    <div class="d-flex gap-3">
+
+                        <div class="publication-index">
+                            5
+                        </div>
+
+                        <div>
+
+                            <span class="non-sinta-badge">
+                                Non-SINTA
+                            </span>
+
+                            <h5 class="publication-title">
+
+                                "Analisis Framing Model Zhongdang Pan
+                                dan Gerald M. Kosicki terhadap
+                                Pemberitaan Peringatan Hari Guru
+                                Nasional 2024 pada Media Online
+                                Sokoguru.id dan MediaIndonesia.com"
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     CONTACT SECTION
+===================================================== -->
+
+<section id="contact" class="py-5 bg-light">
+
+```
+<div class="container">
+
+    <h2 class="section-title">
+        Hubungi Saya
+    </h2>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card">
+
+                <div class="card-body p-4">
+
+                    <h4 class="card-title text-primary-custom mb-4">
+                        Informasi Kontak
+                    </h4>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-telephone-fill text-primary-custom"></i>
+
+                        <span>
+                            +6285775104241
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-envelope-fill text-primary-custom"></i>
+
+                        <span>
+                            email@example.com
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-geo-alt-fill text-primary-custom"></i>
+
+                        <span>
+                            Bekasi, Jawa Barat
+                        </span>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <a
+                            href="#"
+                            class="btn btn-outline-primary-custom me-2"
+                            aria-label="Instagram">
+
+                            <i class="bi bi-instagram"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="py-4 bg-primary-custom text-white">
+
+```
+<div class="container text-center">
+
+    <p class="mb-0">
+
+        &copy; 2026 Layung Siti Nurazizah.
+        All Rights Reserved.
+
+    </p>
+
+</div>
+```
+
+</footer>
+
+<!-- =====================================================
+     BOOTSTRAP JAVASCRIPT
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
