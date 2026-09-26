@@ -1,621 +1,1995 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio - Layung Siti Nurazizah</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="theme-color" content="#c04434">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <meta name="description"
+          content="Portfolio Layung Siti Nurazizah - Pendidikan Bahasa dan Sastra Indonesia">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Layung Siti Nurazizah | Portfolio</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
 
     <style>
+
+        /* =================================================
+           GLOBAL
+        ================================================= */
+
         :root {
+
             --primary: #c04434;
-            --primary-dark: #8f2d22;
-            --secondary: #f8e7e3;
-            --dark: #1f2937;
-            --text: #64748b;
+
+            --primary-dark: #8e2c21;
+
+            --primary-light: #f9e6e2;
+
+            --cream: #fffaf8;
+
             --white: #ffffff;
-            --bg: #fffaf9;
+
+            --dark: #222222;
+
+            --text: #667085;
+
+            --border: rgba(192, 68, 52, .12);
+
+            --shadow:
+                0 15px 45px rgba(75, 35, 28, .08);
+
+            --shadow-hover:
+                0 25px 65px rgba(75, 35, 28, .15);
         }
+
 
         * {
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
+
         body {
+
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg);
+
+            padding: 0;
+
+            font-family: 'Poppins',
+                         sans-serif;
+
+            background: var(--cream);
+
             color: var(--dark);
+
             overflow-x: hidden;
         }
 
-        /* ================================
-           SCROLLBAR
-        ================================= */
-        ::-webkit-scrollbar {
-            width: 9px;
+
+        img {
+            max-width: 100%;
         }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        ::selection {
+            background: var(--primary);
+            color: white;
+        }
+
+
+        /* =================================================
+           SCROLLBAR
+        ================================================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
 
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #f5f5f5;
         }
 
+
         ::-webkit-scrollbar-thumb {
-            background: var(--primary);
+
+            background:
+                linear-gradient(
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
             border-radius: 20px;
         }
 
-        /* ================================
+
+        /* =================================================
            NAVBAR
-        ================================= */
+        ================================================= */
+
         .navbar {
-            background: rgba(192, 68, 52, 0.92) !important;
+
+            background:
+                rgba(192, 68, 52, .92) !important;
+
             backdrop-filter: blur(15px);
+
             -webkit-backdrop-filter: blur(15px);
-            padding: 14px 0;
-            transition: .4s;
+
+            padding: 12px 0;
+
+            transition: .3s;
+
+            z-index: 9999;
         }
+
+
+        .navbar.scrolled {
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,.15);
+        }
+
 
         .navbar-brand {
+
+            color: white !important;
+
+            font-size: 1rem;
+
             font-weight: 700;
-            letter-spacing: .5px;
+
+            letter-spacing: .2px;
         }
+
 
         .nav-link {
-            color: rgba(255,255,255,.9) !important;
-            margin-left: 12px;
-            position: relative;
+
+            color:
+                rgba(255,255,255,.9)
+                !important;
+
+            font-size: .88rem;
+
+            font-weight: 500;
+
+            padding:
+                8px 12px
+                !important;
+
+            border-radius: 8px;
+
             transition: .3s;
         }
 
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            bottom: 3px;
-            left: 12px;
-            width: 0;
-            height: 2px;
-            background: white;
-            transition: .3s;
+
+        .nav-link:hover {
+
+            background:
+                rgba(255,255,255,.12);
+
+            color: white !important;
         }
 
-        .nav-link:hover::after {
-            width: calc(100% - 24px);
+
+        .navbar-toggler {
+
+            border: none;
+
+            padding: 7px 8px;
         }
 
-        /* ================================
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+
+        /* =================================================
            HERO
-        ================================= */
+        ================================================= */
+
         .hero {
-            min-height: 92vh;
+
+            min-height:
+                calc(100svh - 65px);
+
             position: relative;
+
             display: flex;
+
             align-items: center;
+
+            justify-content: center;
+
             color: white;
 
-            /*
-              PENTING:
-              Pastikan file berada di folder yang sama
-              dengan file HTML.
+            padding:
+                80px 20px;
 
-              Jika nama file sebenarnya:
-              bglayung.jpeg
-              gunakan bglayung.jpeg
+            background-image:
 
-              Jika sebenarnya:
-              bglayung.jpeg.jpeg
-              biarkan nama sesuai file tersebut.
-            */
-            background:
                 linear-gradient(
                     135deg,
-                    rgba(91, 22, 14, .88),
+                    rgba(67, 18, 12, .88),
                     rgba(192, 68, 52, .55)
                 ),
-                url("bglayung.jpeg") center center / cover no-repeat;
+
+                url("bglayung.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
         }
+
 
         .hero::before {
+
             content: "";
+
             position: absolute;
+
             inset: 0;
+
             background:
-                radial-gradient(circle at 15% 20%, rgba(255,255,255,.15), transparent 25%),
-                radial-gradient(circle at 85% 80%, rgba(255,255,255,.12), transparent 25%);
+
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(255,255,255,.13),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(255,255,255,.1),
+                    transparent 25%
+                );
         }
+
 
         .hero-content {
+
             position: relative;
+
             z-index: 2;
+
+            width: 100%;
+
+            max-width: 850px;
+
+            text-align: center;
         }
 
-        .hero-photo {
-            width: 230px;
-            height: 230px;
+
+        /* Foto Profil */
+
+        .profile-photo {
+
+            width: 190px;
+
+            height: 190px;
+
             object-fit: cover;
-            border-radius: 50%;
-            border: 7px solid rgba(255,255,255,.9);
-            box-shadow:
-                0 0 0 12px rgba(255,255,255,.08),
-                0 20px 60px rgba(0,0,0,.35);
 
-            animation: floating 4s ease-in-out infinite;
+            border-radius: 50%;
+
+            border:
+                6px solid
+                rgba(255,255,255,.95);
+
+            box-shadow:
+
+                0 0 0 10px
+                rgba(255,255,255,.08),
+
+                0 20px 60px
+                rgba(0,0,0,.35);
+
+            animation:
+                floating 4s ease-in-out infinite;
         }
+
 
         @keyframes floating {
-            0%, 100% {
-                transform: translateY(0);
+
+            0% {
+                transform:
+                    translateY(0);
             }
 
             50% {
-                transform: translateY(-12px);
+                transform:
+                    translateY(-12px);
+            }
+
+            100% {
+                transform:
+                    translateY(0);
             }
         }
 
+
         .hero h1 {
-            font-size: clamp(2.3rem, 6vw, 4.5rem);
-            font-weight: 800;
+
             margin-top: 30px;
+
+            font-size:
+                clamp(
+                    2.2rem,
+                    7vw,
+                    4.5rem
+                );
+
+            line-height: 1.15;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
         }
+
 
         .hero h1 span {
-            color: #ffd7d0;
+            color: #ffd4cc;
         }
+
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: .9;
+
+            margin-top: 15px;
+
+            font-size:
+                clamp(
+                    .95rem,
+                    2vw,
+                    1.2rem
+                );
+
+            line-height: 1.7;
+
+            opacity: .95;
         }
 
+
+        .hero-role {
+
+            margin-top: 12px;
+
+            color: #ffe8e3;
+
+            font-size: .9rem;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =================================================
+           BUTTON
+        ================================================= */
+
         .hero-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
             margin-top: 30px;
         }
 
+
         .btn-modern {
-            padding: 12px 25px;
+
+            min-height: 48px;
+
+            padding:
+                12px 24px;
+
             border-radius: 50px;
+
+            font-size: .88rem;
+
             font-weight: 600;
-            transition: .3s;
+
+            transition:
+                transform .3s,
+                box-shadow .3s;
         }
+
 
         .btn-modern:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0,0,0,.2);
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 12px 25px
+                rgba(0,0,0,.2);
         }
 
-        .btn-light-modern {
+
+        .btn-white {
+
             background: white;
+
             color: var(--primary);
+
             border: none;
         }
 
-        .btn-outline-modern {
+
+        .btn-outline-white {
+
             color: white;
-            border: 1px solid rgba(255,255,255,.7);
+
+            border:
+                1px solid
+                rgba(255,255,255,.7);
         }
 
-        .btn-outline-modern:hover {
+
+        .btn-outline-white:hover {
+
             background: white;
+
             color: var(--primary);
         }
 
-        /* ================================
+
+        /* =================================================
            SECTION
-        ================================= */
+        ================================================= */
+
         section {
             padding: 90px 0;
-            position: relative;
         }
+
 
         .section-heading {
-            margin-bottom: 55px;
+
+            text-align: center;
+
+            margin-bottom: 50px;
         }
+
 
         .section-label {
+
             color: var(--primary);
+
+            font-size: .72rem;
+
             font-weight: 700;
-            text-transform: uppercase;
+
             letter-spacing: 3px;
-            font-size: .8rem;
+
+            text-transform: uppercase;
         }
+
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
+
             margin-top: 8px;
+
+            margin-bottom: 0;
+
+            font-size:
+                clamp(
+                    1.8rem,
+                    4vw,
+                    2.8rem
+                );
+
+            font-weight: 800;
         }
+
 
         .section-line {
-            width: 70px;
-            height: 5px;
-            background: var(--primary);
-            border-radius: 20px;
-            margin-top: 15px;
+
+            width: 60px;
+
+            height: 4px;
+
+            margin:
+                15px auto 0;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    #e78676
+                );
         }
 
-        /* ================================
-           GLASS CARD
-        ================================= */
+
+        /* =================================================
+           MODERN CARD
+        ================================================= */
+
         .modern-card {
-            background: rgba(255,255,255,.82);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,.7);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 15px 45px rgba(86, 36, 30, .08);
-            transition: .4s;
+
             height: 100%;
+
+            padding: 30px;
+
+            background:
+                rgba(255,255,255,.85);
+
+            border:
+                1px solid
+                rgba(255,255,255,.9);
+
+            border-radius: 24px;
+
+            box-shadow:
+                var(--shadow);
+
+            backdrop-filter:
+                blur(15px);
+
+            -webkit-backdrop-filter:
+                blur(15px);
+
+            transition:
+                transform .4s,
+                box-shadow .4s;
         }
+
 
         .modern-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(86, 36, 30, .15);
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                var(--shadow-hover);
         }
 
+
         .icon-box {
+
             width: 55px;
+
             height: 55px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             border-radius: 16px;
-            background: var(--secondary);
-            color: var(--primary);
-            font-size: 1.5rem;
+
+            background:
+                var(--primary-light);
+
+            color:
+                var(--primary);
+
+            font-size: 1.4rem;
+
             margin-bottom: 20px;
         }
 
-        /* ================================
+
+        /* =================================================
            ABOUT
-        ================================= */
-        .about-text {
-            color: var(--text);
-            line-height: 2;
-        }
+        ================================================= */
 
         .info-item {
+
             display: flex;
-            align-items: center;
+
+            align-items: flex-start;
+
             margin-bottom: 18px;
         }
 
-        .info-item i {
+
+        .info-icon {
+
+            flex:
+                0 0 42px;
+
             width: 42px;
+
             height: 42px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            background: var(--secondary);
-            color: var(--primary);
+
             border-radius: 12px;
-            margin-right: 14px;
+
+            background:
+                var(--primary-light);
+
+            color:
+                var(--primary);
+
+            margin-right: 12px;
         }
 
-        /* ================================
-           STATS
-        ================================= */
-        .stats-section {
-            background: var(--primary);
-            color: white;
+
+        .info-item small {
+
+            color:
+                #98a2b3;
+
+            font-size: .7rem;
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+
+        .info-item strong {
+
+            display: block;
+
+            font-size: .82rem;
+
+            line-height: 1.5;
         }
 
-        .stat-text {
-            opacity: .8;
+
+        .about-text {
+
+            color:
+                var(--text);
+
+            font-size: .9rem;
+
+            line-height: 1.9;
+
+            margin-bottom: 15px;
         }
 
-        /* ================================
-           GALLERY
-        ================================= */
-        .gallery-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 22px;
-            height: 280px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.12);
-        }
 
-        .gallery-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: .6s;
-        }
+        /* =================================================
+           STATISTICS
+        ================================================= */
 
-        .gallery-card:hover img {
-            transform: scale(1.1);
-        }
+        .stats {
 
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: end;
-            padding: 25px;
-            background: linear-gradient(
-                transparent 25%,
-                rgba(0,0,0,.8)
-            );
-            color: white;
-        }
-
-        .gallery-overlay h5 {
-            margin: 0;
-            font-weight: 700;
-        }
-
-        /* ================================
-           TIMELINE
-        ================================= */
-        .timeline {
-            position: relative;
-            padding-left: 35px;
-        }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e7b2aa;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 35px;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -33px;
-            top: 5px;
-            width: 17px;
-            height: 17px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 4px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
-        }
-
-        .timeline-item h5 {
-            font-weight: 700;
-        }
-
-        .timeline-item p,
-        .timeline-item li {
-            color: var(--text);
-            line-height: 1.8;
-        }
-
-        /* ================================
-           SKILLS
-        ================================= */
-        .skill-tag {
-            display: inline-block;
-            padding: 10px 17px;
-            margin: 5px;
-            background: var(--secondary);
-            color: var(--primary);
-            border-radius: 50px;
-            font-weight: 600;
-            transition: .3s;
-        }
-
-        .skill-tag:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* ================================
-           PUBLICATION
-        ================================= */
-        .publication {
-            border-left: 5px solid var(--primary);
-        }
-
-        .badge-modern {
-            background: var(--primary);
-            color: white;
-            padding: 7px 14px;
-            border-radius: 50px;
-            font-size: .75rem;
-            font-weight: 700;
-        }
-
-        /* ================================
-           CONTACT
-        ================================= */
-        .contact-card {
             background:
                 linear-gradient(
                     135deg,
                     var(--primary),
                     var(--primary-dark)
                 );
+
             color: white;
-            border-radius: 30px;
-            padding: 50px;
-            box-shadow: 0 25px 60px rgba(192,68,52,.25);
+
+            padding: 55px 0;
         }
+
+
+        .stat-number {
+
+            font-size: 2.4rem;
+
+            font-weight: 800;
+        }
+
+
+        .stat-text {
+
+            color:
+                rgba(255,255,255,.75);
+
+            font-size: .8rem;
+        }
+
+
+        /* =================================================
+           GALLERY
+        ================================================= */
+
+        .gallery-card {
+
+            height: 280px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,0,0,.12);
+        }
+
+
+        .gallery-card img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform .6s;
+        }
+
+
+        .gallery-card:hover img {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        .gallery-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 22px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    transparent 25%,
+                    rgba(0,0,0,.82)
+                );
+        }
+
+
+        .gallery-overlay h5 {
+
+            margin: 0;
+
+            font-size: .95rem;
+
+            font-weight: 700;
+
+            line-height: 1.5;
+        }
+
+
+        /* =================================================
+           TIMELINE
+        ================================================= */
+
+        .timeline {
+
+            position: relative;
+
+            padding-left: 32px;
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            bottom: 0;
+
+            left: 7px;
+
+            width: 2px;
+
+            background:
+                #e9b5ac;
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            margin-bottom: 30px;
+        }
+
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .timeline-item::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: -31px;
+
+            top: 5px;
+
+            width: 15px;
+
+            height: 15px;
+
+            border-radius: 50%;
+
+            background:
+                var(--primary);
+
+            border:
+                3px solid white;
+
+            box-shadow:
+                0 0 0 2px
+                var(--primary);
+        }
+
+
+        .timeline-item h5 {
+
+            font-size: .95rem;
+
+            font-weight: 700;
+
+            line-height: 1.5;
+        }
+
+
+        .timeline-item small {
+
+            color:
+                var(--primary);
+
+            font-weight: 600;
+        }
+
+
+        .timeline-item li,
+        .timeline-item p {
+
+            color:
+                var(--text);
+
+            font-size: .82rem;
+
+            line-height: 1.8;
+        }
+
+
+        /* =================================================
+           SKILLS
+        ================================================= */
+
+        .skill-tag {
+
+            display: inline-block;
+
+            padding:
+                9px 14px;
+
+            margin:
+                3px 2px;
+
+            border-radius: 50px;
+
+            background:
+                var(--primary-light);
+
+            color:
+                var(--primary);
+
+            font-size: .72rem;
+
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+
+        .skill-tag:hover {
+
+            background:
+                var(--primary);
+
+            color: white;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =================================================
+           PUBLICATION
+        ================================================= */
+
+        .publication {
+
+            border-left:
+                5px solid
+                var(--primary);
+        }
+
+
+        .badge-modern {
+
+            display: inline-block;
+
+            padding:
+                6px 13px;
+
+            border-radius: 50px;
+
+            background:
+                var(--primary);
+
+            color: white;
+
+            font-size: .65rem;
+
+            font-weight: 700;
+        }
+
+
+        .publication h5 {
+
+            margin-top: 14px;
+
+            font-size: .92rem;
+
+            line-height: 1.75;
+
+            font-weight: 600;
+        }
+
+
+        /* =================================================
+           CONTACT
+        ================================================= */
+
+        .contact-card {
+
+            padding: 50px;
+
+            border-radius: 30px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            box-shadow:
+                0 25px 60px
+                rgba(192,68,52,.25);
+        }
+
 
         .contact-item {
+
             display: flex;
+
             align-items: center;
-            margin-bottom: 25px;
+
+            margin-bottom: 22px;
+
+            font-size: .85rem;
         }
+
 
         .contact-item i {
-            font-size: 1.5rem;
-            margin-right: 18px;
+
+            width: 35px;
+
+            font-size: 1.3rem;
         }
 
-        /* ================================
+
+        /* =================================================
            FOOTER
-        ================================= */
+        ================================================= */
+
         footer {
-            background: #241311;
-            color: rgba(255,255,255,.7);
-            padding: 30px 0;
+
+            padding:
+                30px 15px;
+
+            background:
+                #241311;
+
+            color:
+                rgba(255,255,255,.65);
+
+            text-align: center;
         }
 
-        /* ================================
-           ANIMATION
-        ================================= */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all .8s ease;
+
+        footer p {
+
+            margin: 0;
+
+            font-size: .72rem;
+
+            line-height: 1.7;
         }
+
+
+        /* =================================================
+           SCROLL ANIMATION
+        ================================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+        }
+
 
         .reveal.active {
+
             opacity: 1;
-            transform: translateY(0);
+
+            transform:
+                translateY(0);
         }
 
-        /* ================================
-           MOBILE
-        ================================= */
-        @media(max-width:768px) {
+
+        /* =================================================
+           FLOATING WHATSAPP
+        ================================================= */
+
+        .whatsapp {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                #25D366;
+
+            color: white;
+
+            font-size: 1.5rem;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,.2);
+
+            z-index: 999;
+
+            transition: .3s;
+        }
+
+
+        .whatsapp:hover {
+
+            color: white;
+
+            transform:
+                translateY(-5px)
+                scale(1.05);
+        }
+
+
+        /* =================================================
+           BACK TO TOP
+        ================================================= */
+
+        .back-top {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 88px;
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                var(--primary);
+
+            color: white;
+
+            border: none;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: .3s;
+
+            z-index: 998;
+        }
+
+
+        .back-top.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        /* =================================================
+           TABLET
+        ================================================= */
+
+        @media (max-width: 991px) {
+
+            .navbar-collapse {
+
+                margin-top: 10px;
+
+                padding: 8px;
+
+                border-radius: 15px;
+
+                background:
+                    rgba(100,25,18,.5);
+            }
+
+
+            .nav-link {
+
+                padding:
+                    12px 14px
+                    !important;
+            }
+
 
             .hero {
-                min-height: 100vh;
-                text-align: center;
-            }
 
-            .hero-photo {
-                width: 170px;
-                height: 170px;
-            }
-
-            section {
-                padding: 65px 0;
-            }
-
-            .modern-card {
-                padding: 22px;
-            }
-
-            .contact-card {
-                padding: 30px 22px;
+                min-height:
+                    calc(100svh - 60px);
             }
         }
+
+
+        /* =================================================
+           ANDROID / MOBILE
+        ================================================= */
+
+        @media (max-width: 767px) {
+
+            body {
+
+                font-size: 14px;
+            }
+
+
+            section {
+
+                padding:
+                    60px 0;
+            }
+
+
+            .container {
+
+                width: 100%;
+
+                padding-left: 18px;
+
+                padding-right: 18px;
+            }
+
+
+            /* Navbar */
+
+            .navbar {
+
+                padding:
+                    9px 0;
+            }
+
+
+            .navbar-brand {
+
+                font-size: .88rem;
+
+                max-width: 75%;
+
+                line-height: 1.3;
+            }
+
+
+            /* Hero */
+
+            .hero {
+
+                min-height:
+                    calc(100svh - 58px);
+
+                padding:
+                    60px 18px 70px;
+
+                background-position:
+                    center center;
+            }
+
+
+            .profile-photo {
+
+                width: 145px;
+
+                height: 145px;
+
+                border-width: 5px;
+
+                box-shadow:
+
+                    0 0 0 8px
+                    rgba(255,255,255,.08),
+
+                    0 15px 35px
+                    rgba(0,0,0,.3);
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    2rem;
+
+                margin-top:
+                    25px;
+
+                letter-spacing:
+                    -.5px;
+            }
+
+
+            .hero-subtitle {
+
+                font-size:
+                    .88rem;
+
+                line-height:
+                    1.7;
+            }
+
+
+            .hero-role {
+
+                font-size:
+                    .72rem;
+
+                line-height:
+                    1.7;
+
+                letter-spacing:
+                    .7px;
+            }
+
+
+            .hero-buttons {
+
+                flex-direction:
+                    column;
+
+                gap: 10px;
+
+                margin-top:
+                    25px;
+            }
+
+
+            .hero-buttons .btn {
+
+                width:
+                    100%;
+
+                margin:
+                    0 !important;
+            }
+
+
+            /* Section */
+
+            .section-heading {
+
+                margin-bottom:
+                    35px;
+            }
+
+
+            .section-label {
+
+                font-size:
+                    .65rem;
+
+                letter-spacing:
+                    2px;
+            }
+
+
+            .section-title {
+
+                font-size:
+                    1.7rem;
+            }
+
+
+            /* Card */
+
+            .modern-card {
+
+                padding:
+                    22px;
+
+                border-radius:
+                    19px;
+            }
+
+
+            .modern-card:hover {
+
+                transform:
+                    none;
+
+                box-shadow:
+                    var(--shadow);
+            }
+
+
+            .icon-box {
+
+                width:
+                    48px;
+
+                height:
+                    48px;
+
+                font-size:
+                    1.2rem;
+
+                border-radius:
+                    13px;
+            }
+
+
+            /* About */
+
+            .about-text {
+
+                font-size:
+                    .84rem;
+
+                line-height:
+                    1.9;
+            }
+
+
+            .info-item strong {
+
+                font-size:
+                    .78rem;
+            }
+
+
+            .info-item small {
+
+                font-size:
+                    .65rem;
+            }
+
+
+            .info-icon {
+
+                flex-basis:
+                    38px;
+
+                width:
+                    38px;
+
+                height:
+                    38px;
+
+                margin-right:
+                    10px;
+            }
+
+
+            /* Stats */
+
+            .stats {
+
+                padding:
+                    45px 0;
+            }
+
+
+            .stat-number {
+
+                font-size:
+                    1.7rem;
+            }
+
+
+            .stat-text {
+
+                font-size:
+                    .68rem;
+            }
+
+
+            /* Gallery */
+
+            .gallery-card {
+
+                height:
+                    235px;
+
+                border-radius:
+                    17px;
+            }
+
+
+            .gallery-overlay {
+
+                padding:
+                    17px;
+            }
+
+
+            .gallery-overlay h5 {
+
+                font-size:
+                    .82rem;
+            }
+
+
+            /* Timeline */
+
+            .timeline {
+
+                padding-left:
+                    27px;
+            }
+
+
+            .timeline::before {
+
+                left:
+                    6px;
+            }
+
+
+            .timeline-item::before {
+
+                left:
+                    -27px;
+
+                width:
+                    13px;
+
+                height:
+                    13px;
+            }
+
+
+            .timeline-item h5 {
+
+                font-size:
+                    .9rem;
+            }
+
+
+            .timeline-item li,
+            .timeline-item p {
+
+                font-size:
+                    .78rem;
+
+                line-height:
+                    1.75;
+            }
+
+
+            /* Publication */
+
+            .publication {
+
+                border-left-width:
+                    4px;
+
+                padding:
+                    19px;
+            }
+
+
+            .publication h5 {
+
+                font-size:
+                    .82rem;
+
+                line-height:
+                    1.75;
+            }
+
+
+            /* Contact */
+
+            .contact-card {
+
+                padding:
+                    30px 22px;
+
+                border-radius:
+                    22px;
+            }
+
+
+            .contact-card h2 {
+
+                font-size:
+                    1.8rem;
+            }
+
+
+            .contact-item {
+
+                align-items:
+                    flex-start;
+
+                font-size:
+                    .78rem;
+
+                line-height:
+                    1.6;
+
+                word-break:
+                    break-word;
+            }
+
+
+            .contact-item i {
+
+                flex:
+                    0 0 30px;
+
+                font-size:
+                    1.1rem;
+            }
+
+
+            .contact-card .btn {
+
+                width:
+                    100%;
+            }
+
+
+            /* WhatsApp */
+
+            .whatsapp {
+
+                right:
+                    15px;
+
+                bottom:
+                    15px;
+
+                width:
+                    52px;
+
+                height:
+                    52px;
+            }
+
+
+            .back-top {
+
+                right:
+                    15px;
+
+                bottom:
+                    78px;
+
+                width:
+                    40px;
+
+                height:
+                    40px;
+            }
+        }
+
+
+        /* =================================================
+           SMALL ANDROID 360px
+        ================================================= */
+
+        @media (max-width: 380px) {
+
+            .container {
+
+                padding-left:
+                    14px;
+
+                padding-right:
+                    14px;
+            }
+
+
+            .hero {
+
+                padding-left:
+                    14px;
+
+                padding-right:
+                    14px;
+            }
+
+
+            .profile-photo {
+
+                width:
+                    125px;
+
+                height:
+                    125px;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    1.7rem;
+            }
+
+
+            .hero-subtitle {
+
+                font-size:
+                    .82rem;
+            }
+
+
+            .modern-card {
+
+                padding:
+                    18px;
+            }
+
+
+            .gallery-card {
+
+                height:
+                    215px;
+            }
+
+
+            .stat-number {
+
+                font-size:
+                    1.5rem;
+            }
+        }
+
+
+        /* =================================================
+           REDUCE MOTION
+        ================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+
+                scroll-behavior:
+                    auto;
+            }
+
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    .01ms !important;
+            }
+
+
+            .reveal {
+
+                opacity:
+                    1;
+
+                transform:
+                    none;
+            }
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top"
+     id="navbar">
+
     <div class="container">
 
-        <a class="navbar-brand" href="#home">
+        <a class="navbar-brand"
+           href="#home">
+
             Layung Siti Nurazizah
+
         </a>
+
 
         <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
+            data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Buka menu">
 
             <span class="navbar-toggler-icon"></span>
+
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+
+        <div class="collapse navbar-collapse"
+             id="navbarMenu">
 
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Profil</a>
+
+                    <a class="nav-link"
+                       href="#about">
+
+                        Profil
+
+                    </a>
+
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Galeri</a>
-                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#experience">Pengalaman</a>
+
+                    <a class="nav-link"
+                       href="#gallery">
+
+                        Galeri
+
+                    </a>
+
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Kemampuan</a>
-                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#education">Pendidikan</a>
+
+                    <a class="nav-link"
+                       href="#experience">
+
+                        Pengalaman
+
+                    </a>
+
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#publication">Publikasi</a>
-                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Kontak</a>
+
+                    <a class="nav-link"
+                       href="#skills">
+
+                        Kemampuan
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#education">
+
+                        Pendidikan
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#publication">
+
+                        Publikasi
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#contact">
+
+                        Kontak
+
+                    </a>
+
                 </li>
 
             </ul>
+
         </div>
+
     </div>
+
 </nav>
 
 
-<!-- ================= HERO ================= -->
 
-<header id="home" class="hero">
+<!-- =====================================================
+     HERO
+====================================================== -->
 
-    <div class="container hero-content text-center">
+<header id="home"
+        class="hero">
 
+    <div class="hero-content">
+
+        <!-- FOTO PROFIL -->
         <img
             src="profilayung.jpeg"
-            alt="Layung Siti Nurazizah"
-            class="hero-photo">
+            alt="Foto Layung Siti Nurazizah"
+            class="profile-photo">
+
 
         <h1>
-            Layung Siti <span>Nurazizah</span>
+
+            Layung Siti
+            <span>Nurazizah</span>
+
         </h1>
 
+
         <p class="hero-subtitle">
+
             Mahasiswi Pendidikan Bahasa dan Sastra Indonesia
+
         </p>
 
-        <p class="mt-3 opacity-75">
-            Educator • MC • Public Relations • Event Organizer
-        </p>
+
+        <div class="hero-role">
+
+            EDUCATOR &nbsp;•&nbsp;
+            MC &nbsp;•&nbsp;
+            PUBLIC RELATIONS &nbsp;•&nbsp;
+            EVENT ORGANIZER
+
+        </div>
+
 
         <div class="hero-buttons">
 
             <a href="#about"
-               class="btn btn-modern btn-light-modern me-2">
-                <i class="bi bi-person"></i>
+               class="btn btn-modern btn-white">
+
+                <i class="bi bi-person me-2"></i>
+
                 Tentang Saya
+
             </a>
 
+
             <a href="#contact"
-               class="btn btn-modern btn-outline-modern">
-                <i class="bi bi-envelope"></i>
+               class="btn btn-modern btn-outline-white">
+
+                <i class="bi bi-envelope me-2"></i>
+
                 Hubungi Saya
+
             </a>
 
         </div>
@@ -625,13 +1999,16 @@
 </header>
 
 
-<!-- ================= ABOUT ================= -->
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
 
 <section id="about">
 
     <div class="container">
 
-        <div class="section-heading text-center reveal">
+        <div class="section-heading reveal">
 
             <div class="section-label">
                 About Me
@@ -641,107 +2018,210 @@
                 Mengenal Saya
             </h2>
 
-            <div class="section-line mx-auto"></div>
+            <div class="section-line"></div>
 
         </div>
 
 
         <div class="row g-4">
 
+
+            <!-- PROFIL -->
+
             <div class="col-lg-5 reveal">
 
                 <div class="modern-card">
 
                     <div class="icon-box">
+
                         <i class="bi bi-person-heart"></i>
+
                     </div>
+
 
                     <h4 class="fw-bold mb-4">
                         Profil
                     </h4>
 
-                    <div class="info-item">
-                        <i class="bi bi-book"></i>
-                        <div>
-                            <small>Program Studi</small>
-                            <strong class="d-block">
-                                Pendidikan Bahasa dan Sastra Indonesia
-                            </strong>
-                        </div>
-                    </div>
 
                     <div class="info-item">
-                        <i class="bi bi-building"></i>
+
+                        <div class="info-icon">
+
+                            <i class="bi bi-book"></i>
+
+                        </div>
+
                         <div>
-                            <small>Universitas</small>
-                            <strong class="d-block">
+
+                            <small>
+                                Program Studi
+                            </small>
+
+                            <strong>
+                                Pendidikan Bahasa dan
+                                Sastra Indonesia
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+
+                            <i class="bi bi-building"></i>
+
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Universitas
+                            </small>
+
+                            <strong>
                                 Universitas Singaperbangsa Karawang
                             </strong>
+
                         </div>
+
                     </div>
 
+
                     <div class="info-item">
-                        <i class="bi bi-mortarboard"></i>
+
+                        <div class="info-icon">
+
+                            <i class="bi bi-mortarboard"></i>
+
+                        </div>
+
                         <div>
-                            <small>Pendidikan</small>
-                            <strong class="d-block">
-                                S1 Pendidikan Bahasa dan Sastra Indonesia
+
+                            <small>
+                                Pendidikan
+                            </small>
+
+                            <strong>
+                                S1 Pendidikan Bahasa dan
+                                Sastra Indonesia
                             </strong>
+
                         </div>
+
                     </div>
 
+
                     <div class="info-item">
-                        <i class="bi bi-geo-alt"></i>
+
+                        <div class="info-icon">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                        </div>
+
                         <div>
-                            <small>Domisili</small>
-                            <strong class="d-block">
+
+                            <small>
+                                Domisili
+                            </small>
+
+                            <strong>
                                 Bekasi, Jawa Barat
                             </strong>
+
                         </div>
+
+                    </div>
+
+
+                    <div class="info-item mb-0">
+
+                        <div class="info-icon">
+
+                            <i class="bi bi-telephone"></i>
+
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Telepon
+                            </small>
+
+                            <strong>
+                                +6285775104241
+                            </strong>
+
+                        </div>
+
                     </div>
 
                 </div>
 
             </div>
 
+
+
+            <!-- TENTANG -->
 
             <div class="col-lg-7 reveal">
 
                 <div class="modern-card">
 
                     <div class="icon-box">
+
                         <i class="bi bi-stars"></i>
+
                     </div>
+
 
                     <h4 class="fw-bold mb-4">
                         Tentang Saya
                     </h4>
 
-                    <p class="about-text">
-                        Lulusan S1 Pendidikan Bahasa dan Sastra Indonesia
-                        Universitas Singaperbangsa Karawang yang memiliki
-                        minat dan pengalaman dalam bidang pendidikan.
-                    </p>
 
                     <p class="about-text">
-                        Memiliki pengalaman mengajar pada jenjang SMP
-                        melalui kegiatan PLP, serta pengalaman praktik
-                        mengajar pada jenjang SD dan SMA.
+
+                        Lulusan S1 Pendidikan Bahasa dan Sastra
+                        Indonesia Universitas Singaperbangsa
+                        Karawang yang memiliki minat dan pengalaman
+                        dalam bidang pendidikan.
+
                     </p>
 
+
                     <p class="about-text">
-                        Selain itu, berpengalaman mengajar anak-anak di TPQ
-                        selama kegiatan KKN dan memberikan les privat
-                        kepada anak usia pra-SD dan SD secara
+
+                        Memiliki pengalaman mengajar pada jenjang
+                        SMP melalui kegiatan PLP, serta pengalaman
+                        praktik mengajar pada jenjang SD dan SMA.
+
+                    </p>
+
+
+                    <p class="about-text">
+
+                        Selain itu, berpengalaman mengajar anak-anak
+                        di TPQ selama kegiatan Kuliah Kerja Nyata
+                        (KKN) dan memberikan les privat kepada anak
+                        usia pra-SD dan SD secara
                         <i>door to door</i>.
+
                     </p>
+
 
                     <p class="about-text mb-0">
-                        Memiliki kemampuan komunikasi yang baik,
-                        bertanggung jawab, mampu bekerja sama, serta
-                        memiliki kemauan untuk terus belajar dan
-                        mengembangkan kemampuan di bidang pendidikan,
-                        public speaking, dan organisasi.
+
+                        Terbiasa berinteraksi dengan peserta didik,
+                        menyampaikan materi sesuai usia dan kemampuan
+                        siswa, mengelola proses pembelajaran, serta
+                        menciptakan suasana belajar yang nyaman dan
+                        menyenangkan.
+
                     </p>
 
                 </div>
@@ -755,32 +2235,67 @@
 </section>
 
 
-<!-- ================= STATS ================= -->
 
-<section class="stats-section">
+<!-- =====================================================
+     STATISTICS
+====================================================== -->
+
+<section class="stats">
 
     <div class="container">
 
         <div class="row text-center g-4">
 
-            <div class="col-6 col-lg-3">
-                <div class="stat-number">5+</div>
-                <div class="stat-text">Publikasi</div>
-            </div>
 
             <div class="col-6 col-lg-3">
-                <div class="stat-number">8+</div>
-                <div class="stat-text">Kegiatan MC</div>
+
+                <div class="stat-number">
+                    5+
+                </div>
+
+                <div class="stat-text">
+                    Publikasi
+                </div>
+
             </div>
 
-            <div class="col-6 col-lg-3">
-                <div class="stat-number">5+</div>
-                <div class="stat-text">Kegiatan Organisasi</div>
-            </div>
 
             <div class="col-6 col-lg-3">
-                <div class="stat-number">4</div>
-                <div class="stat-text">Jenjang Mengajar</div>
+
+                <div class="stat-number">
+                    8+
+                </div>
+
+                <div class="stat-text">
+                    Kegiatan MC
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="stat-number">
+                    5+
+                </div>
+
+                <div class="stat-text">
+                    Organisasi
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="stat-number">
+                    4
+                </div>
+
+                <div class="stat-text">
+                    Jenjang Mengajar
+                </div>
+
             </div>
 
         </div>
@@ -790,13 +2305,16 @@
 </section>
 
 
-<!-- ================= GALLERY ================= -->
+
+<!-- =====================================================
+     GALERI
+====================================================== -->
 
 <section id="gallery">
 
     <div class="container">
 
-        <div class="section-heading text-center reveal">
+        <div class="section-heading reveal">
 
             <div class="section-label">
                 My Activities
@@ -806,24 +2324,30 @@
                 Galeri Kegiatan
             </h2>
 
-            <div class="section-line mx-auto"></div>
+            <div class="section-line"></div>
 
         </div>
 
 
         <div class="row g-4">
 
-            <div class="col-md-6 col-lg-3 reveal">
+
+            <!-- GALERI 1 -->
+
+            <div class="col-12 col-sm-6 col-lg-3 reveal">
 
                 <div class="gallery-card">
 
-                    <img src="dutapendidikan.jpg"
-                         alt="Duta Pendidikan FKIP Unsika">
+                    <img
+                        src="dutapendidikan.jpg"
+                        alt="Duta Pendidikan FKIP Unsika"
+                        loading="lazy">
 
                     <div class="gallery-overlay">
 
                         <h5>
-                            Duta Pendidikan FKIP Unsika
+                            Duta Pendidikan
+                            FKIP Unsika
                         </h5>
 
                     </div>
@@ -833,17 +2357,22 @@
             </div>
 
 
-            <div class="col-md-6 col-lg-3 reveal">
+            <!-- GALERI 2 -->
+
+            <div class="col-12 col-sm-6 col-lg-3 reveal">
 
                 <div class="gallery-card">
 
-                    <img src="bahasainggris.jpg"
-                         alt="Tim Pondok Bahasa Inggris">
+                    <img
+                        src="bahasainggris.jpg"
+                        alt="Tim Pondok Bahasa Inggris Mr. Jo"
+                        loading="lazy">
 
                     <div class="gallery-overlay">
 
                         <h5>
-                            Pondok Bahasa Inggris Mr. Jo
+                            Tim Pondok Bahasa Inggris
+                            Mr. Jo
                         </h5>
 
                     </div>
@@ -853,17 +2382,22 @@
             </div>
 
 
-            <div class="col-md-6 col-lg-3 reveal">
+            <!-- GALERI 3 -->
+
+            <div class="col-12 col-sm-6 col-lg-3 reveal">
 
                 <div class="gallery-card">
 
-                    <img src="sbc.jpg"
-                         alt="Marvellous Public Speaking SBC">
+                    <img
+                        src="sbc.jpg"
+                        alt="Marvellous Public Speaking SBC"
+                        loading="lazy">
 
                     <div class="gallery-overlay">
 
                         <h5>
-                            Marvellous Public Speaking SBC
+                            Marvellous Public Speaking
+                            SBC
                         </h5>
 
                     </div>
@@ -873,12 +2407,16 @@
             </div>
 
 
-            <div class="col-md-6 col-lg-3 reveal">
+            <!-- GALERI 4 -->
+
+            <div class="col-12 col-sm-6 col-lg-3 reveal">
 
                 <div class="gallery-card">
 
-                    <img src="protokoler.jpg"
-                         alt="Diskusi Sastra">
+                    <img
+                        src="protokoler.jpg"
+                        alt="Diskusi Sastra"
+                        loading="lazy">
 
                     <div class="gallery-overlay">
 
@@ -899,13 +2437,17 @@
 </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
 
-<section id="experience" style="background:#fff5f3;">
+<!-- =====================================================
+     EXPERIENCE
+====================================================== -->
+
+<section id="experience"
+        style="background:#fff5f3;">
 
     <div class="container">
 
-        <div class="section-heading text-center reveal">
+        <div class="section-heading reveal">
 
             <div class="section-label">
                 Experience
@@ -915,23 +2457,34 @@
                 Pengalaman
             </h2>
 
-            <div class="section-line mx-auto"></div>
+            <div class="section-line"></div>
 
         </div>
 
 
-        <div class="row g-5">
+        <div class="row g-4">
 
-            <div class="col-lg-6 reveal">
+
+            <!-- PENGALAMAN KERJA -->
+
+            <div class="col-lg-7 reveal">
 
                 <div class="modern-card">
 
+                    <div class="icon-box">
+
+                        <i class="bi bi-briefcase-fill"></i>
+
+                    </div>
+
+
                     <h4 class="fw-bold mb-4">
-                        <i class="bi bi-briefcase-fill text-danger me-2"></i>
                         Pengalaman Kerja
                     </h4>
 
+
                     <div class="timeline">
+
 
                         <div class="timeline-item">
 
@@ -939,23 +2492,26 @@
                                 Tim Marvellous Public Speaking SBC
                             </h5>
 
-                            <small class="text-danger">
+                            <small>
                                 2023
                             </small>
 
                             <ul class="mt-2">
 
                                 <li>
-                                    Mendokumentasikan kegiatan dalam
-                                    bentuk foto dan video.
+                                    Mendokumentasikan seluruh sesi
+                                    pelatihan public speaking secara
+                                    visual berupa foto dan video.
                                 </li>
 
                                 <li>
-                                    Mengelola kebutuhan teknis acara.
+                                    Mengelola kebutuhan teknis selama
+                                    acara.
                                 </li>
 
                                 <li>
-                                    Mengedit video untuk publikasi.
+                                    Mengedit video kegiatan untuk
+                                    publikasi.
                                 </li>
 
                             </ul>
@@ -969,7 +2525,7 @@
                                 Tim Pondok Bahasa Inggris Mr. Jo
                             </h5>
 
-                            <small class="text-danger">
+                            <small>
                                 2025
                             </small>
 
@@ -977,7 +2533,7 @@
 
                                 <li>
                                     Mengedit video kegiatan untuk
-                                    kebutuhan publikasi.
+                                    keperluan publikasi dan dokumentasi.
                                 </li>
 
                             </ul>
@@ -991,15 +2547,15 @@
                                 Guru Les Privat Calistung
                             </h5>
 
-                            <small class="text-danger">
+                            <small>
                                 2025
                             </small>
 
                             <ul class="mt-2">
 
                                 <li>
-                                    Mengajar membaca, menulis dan berhitung
-                                    untuk siswa PAUD dan SD.
+                                    Mengajar siswa tingkat PAUD dan SD
+                                    dalam membaca, menulis, dan berhitung.
                                 </li>
 
                             </ul>
@@ -1010,18 +2566,37 @@
                         <div class="timeline-item">
 
                             <h5>
-                                Praktik Mengajar / PLP
+                                Pengalaman Mengajar melalui PLP
                             </h5>
 
                             <ul class="mt-2">
 
                                 <li>
-                                    Mengajar pada jenjang SMP.
+                                    Melaksanakan praktik mengajar
+                                    pada jenjang SMP.
                                 </li>
 
                                 <li>
-                                    Praktik mengajar pada jenjang SD
-                                    dan SMA.
+                                    Menyampaikan materi sesuai
+                                    karakteristik peserta didik.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <h5>
+                                Praktik Mengajar SD dan SMA
+                            </h5>
+
+                            <ul class="mt-2">
+
+                                <li>
+                                    Melaksanakan praktik pembelajaran
+                                    pada jenjang SD dan SMA.
                                 </li>
 
                             </ul>
@@ -1039,7 +2614,7 @@
 
                                 <li>
                                     Mengajar anak-anak di TPQ selama
-                                    kegiatan KKN.
+                                    kegiatan Kuliah Kerja Nyata.
                                 </li>
 
                             </ul>
@@ -1053,34 +2628,48 @@
             </div>
 
 
-            <div class="col-lg-6 reveal">
+
+            <!-- ORGANISASI -->
+
+            <div class="col-lg-5 reveal">
 
                 <div class="modern-card">
 
+                    <div class="icon-box">
+
+                        <i class="bi bi-people-fill"></i>
+
+                    </div>
+
+
                     <h4 class="fw-bold mb-4">
-                        <i class="bi bi-people-fill text-danger me-2"></i>
-                        Pengalaman Organisasi
+                        Organisasi
                     </h4>
 
-                    <div class="skill-tag">
+
+                    <span class="skill-tag">
                         OSIS SMAN 1 Bojongmangu
-                    </div>
+                    </span>
 
-                    <div class="skill-tag">
+
+                    <span class="skill-tag">
                         HIMADIKSATRASIA FKIP Unsika
-                    </div>
+                    </span>
 
-                    <div class="skill-tag">
+
+                    <span class="skill-tag">
                         Badan Legislatif Mahasiswa FKIP Unsika
-                    </div>
+                    </span>
 
-                    <div class="skill-tag">
-                        UKM Duta, Humas & Protokoler FKIP Unsika
-                    </div>
 
-                    <div class="skill-tag">
-                        UKM Protokoler Mahasiswa FKIP Unsika
-                    </div>
+                    <span class="skill-tag">
+                        UKM Duta, Humas & Protokoler
+                    </span>
+
+
+                    <span class="skill-tag">
+                        UKM Protokoler Mahasiswa
+                    </span>
 
                 </div>
 
@@ -1093,13 +2682,16 @@
 </section>
 
 
-<!-- ================= SKILLS ================= -->
+
+<!-- =====================================================
+     SKILLS
+====================================================== -->
 
 <section id="skills">
 
     <div class="container">
 
-        <div class="section-heading text-center reveal">
+        <div class="section-heading reveal">
 
             <div class="section-label">
                 My Skills
@@ -1109,91 +2701,141 @@
                 Kemampuan
             </h2>
 
-            <div class="section-line mx-auto"></div>
+            <div class="section-line"></div>
 
         </div>
 
 
         <div class="row g-4">
 
+
+            <!-- MC -->
+
             <div class="col-lg-4 reveal">
 
                 <div class="modern-card">
 
                     <div class="icon-box">
+
                         <i class="bi bi-mic-fill"></i>
+
                     </div>
+
 
                     <h4 class="fw-bold">
                         MC & Public Speaking
                     </h4>
 
-                    <p class="text-muted">
-                        Berpengalaman menjadi MC dan terlibat dalam
-                        berbagai kegiatan formal maupun edukatif.
+
+                    <p class="about-text">
+
+                        Berpengalaman menjadi MC dalam berbagai
+                        kegiatan formal, pendidikan, organisasi,
+                        dan kegiatan kampus.
+
                     </p>
 
-                    <div>
-                        <span class="skill-tag">MC</span>
-                        <span class="skill-tag">Public Speaking</span>
-                        <span class="skill-tag">Moderator</span>
-                    </div>
+
+                    <span class="skill-tag">
+                        MC
+                    </span>
+
+                    <span class="skill-tag">
+                        Public Speaking
+                    </span>
+
+                    <span class="skill-tag">
+                        Moderator
+                    </span>
 
                 </div>
 
             </div>
 
 
+
+            <!-- EVENT -->
+
             <div class="col-lg-4 reveal">
 
                 <div class="modern-card">
 
                     <div class="icon-box">
+
                         <i class="bi bi-calendar-event"></i>
+
                     </div>
+
 
                     <h4 class="fw-bold">
                         Event Organizer
                     </h4>
 
-                    <p class="text-muted">
-                        Berpengalaman terlibat dalam penyelenggaraan
-                        berbagai kegiatan kampus dan acara formal.
+
+                    <p class="about-text">
+
+                        Berpengalaman dalam mendukung pelaksanaan
+                        berbagai kegiatan dan acara formal.
+
                     </p>
 
-                    <div>
-                        <span class="skill-tag">Event</span>
-                        <span class="skill-tag">Protocol</span>
-                        <span class="skill-tag">Event Organizer</span>
-                    </div>
+
+                    <span class="skill-tag">
+                        Event
+                    </span>
+
+                    <span class="skill-tag">
+                        Protocol
+                    </span>
+
+                    <span class="skill-tag">
+                        Documentation
+                    </span>
 
                 </div>
 
             </div>
 
 
+
+            <!-- PR -->
+
             <div class="col-lg-4 reveal">
 
                 <div class="modern-card">
 
                     <div class="icon-box">
+
                         <i class="bi bi-megaphone-fill"></i>
+
                     </div>
+
 
                     <h4 class="fw-bold">
                         Public Relations
                     </h4>
 
-                    <p class="text-muted">
+
+                    <p class="about-text">
+
                         Memiliki pengalaman dalam komunikasi,
-                        hubungan masyarakat, dan kegiatan organisasi.
+                        hubungan masyarakat, organisasi,
+                        dan kegiatan publik.
+
                     </p>
 
-                    <div>
-                        <span class="skill-tag">PR</span>
-                        <span class="skill-tag">Communication</span>
-                        <span class="skill-tag">Networking</span>
-                    </div>
+
+                    <span class="skill-tag">
+                        Public Relations
+                    </span>
+
+                    <span class="skill-tag">
+                        Communication
+                    </span>
+
+                    <span class="skill-tag">
+                        Networking
+                    </span>
 
                 </div>
 
@@ -1206,13 +2848,17 @@
 </section>
 
 
-<!-- ================= EDUCATION ================= -->
 
-<section id="education" style="background:#fff5f3;">
+<!-- =====================================================
+     EDUCATION
+====================================================== -->
+
+<section id="education"
+        style="background:#fff5f3;">
 
     <div class="container">
 
-        <div class="section-heading text-center reveal">
+        <div class="section-heading reveal">
 
             <div class="section-label">
                 Education
@@ -1222,44 +2868,73 @@
                 Pendidikan
             </h2>
 
-            <div class="section-line mx-auto"></div>
+            <div class="section-line"></div>
 
         </div>
 
 
         <div class="row g-4">
 
+
+            <!-- PENDIDIKAN -->
+
             <div class="col-lg-6 reveal">
 
                 <div class="modern-card">
 
                     <div class="icon-box">
+
                         <i class="bi bi-mortarboard-fill"></i>
+
                     </div>
+
 
                     <h4 class="fw-bold mb-4">
                         Riwayat Pendidikan
                     </h4>
 
+
                     <div class="timeline">
 
-                        <div class="timeline-item">
-                            <h5>PAUD Mawar Jaya</h5>
-                        </div>
 
                         <div class="timeline-item">
-                            <h5>SDN Bojongmangu 02</h5>
+
+                            <h5>
+                                PAUD Mawar Jaya
+                            </h5>
+
                         </div>
 
-                        <div class="timeline-item">
-                            <h5>SMPN 1 Bojongmangu</h5>
-                        </div>
 
                         <div class="timeline-item">
-                            <h5>SMAN 1 Bojongmangu</h5>
+
+                            <h5>
+                                SDN Bojongmangu 02
+                            </h5>
+
                         </div>
 
+
                         <div class="timeline-item">
+
+                            <h5>
+                                SMPN 1 Bojongmangu
+                            </h5>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <h5>
+                                SMAN 1 Bojongmangu
+                            </h5>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
                             <h5>
                                 Universitas Singaperbangsa Karawang
                             </h5>
@@ -1267,6 +2942,7 @@
                             <p>
                                 S1 Pendidikan Bahasa dan Sastra Indonesia
                             </p>
+
                         </div>
 
                     </div>
@@ -1276,17 +2952,24 @@
             </div>
 
 
+
+            <!-- SERTIFIKASI -->
+
             <div class="col-lg-6 reveal">
 
                 <div class="modern-card">
 
                     <div class="icon-box">
+
                         <i class="bi bi-award-fill"></i>
+
                     </div>
+
 
                     <h4 class="fw-bold">
                         Sertifikasi & Pelatihan
                     </h4>
+
 
                     <div class="mt-4">
 
@@ -1294,10 +2977,13 @@
                             Pelatihan Keprotokoleran
                         </h5>
 
-                        <p class="text-muted">
+
+                        <p class="about-text">
+
                             Diselenggarakan oleh Korps Protokoler
                             Mahasiswa FKIP Unsika dan Korps Protokoler
                             Mahasiswa Jawa Barat & DKI Jakarta.
+
                         </p>
 
                     </div>
@@ -1313,13 +2999,16 @@
 </section>
 
 
-<!-- ================= PUBLICATION ================= -->
+
+<!-- =====================================================
+     PUBLICATION
+====================================================== -->
 
 <section id="publication">
 
     <div class="container">
 
-        <div class="section-heading text-center reveal">
+        <div class="section-heading reveal">
 
             <div class="section-label">
                 Academic
@@ -1329,28 +3018,15 @@
                 Publikasi Ilmiah
             </h2>
 
-            <div class="section-line mx-auto"></div>
+            <div class="section-line"></div>
 
         </div>
 
 
         <div class="col-lg-10 mx-auto">
 
-            <div class="modern-card publication mb-4 reveal">
 
-                <span class="badge-modern">
-                    SINTA 5
-                </span>
-
-                <h5 class="mt-3 fw-bold">
-                    Perjuangan Tokoh Utama dalam Menggapai Impian
-                    pada Novel Home Sweet Loan karya Almira Bastari
-                    dan Sang Alkemis karya Paulo Coelho:
-                    Kajian Sastra Bandingan
-                </h5>
-
-            </div>
-
+            <!-- 1 -->
 
             <div class="modern-card publication mb-4 reveal">
 
@@ -1358,15 +3034,44 @@
                     SINTA 5
                 </span>
 
-                <h5 class="mt-3 fw-bold">
-                    Analisis Wacana Kritis Model Teun A. Van Dijk
-                    Terhadap Pemberitaan Daring Mengenai Wacana
-                    Sistem Zonasi Oleh Nadiem Makarim di Portal
-                    Berita Metrotvnews.com
+
+                <h5>
+
+                    Perjuangan Tokoh Utama dalam Menggapai
+                    Impian pada Novel Home Sweet Loan karya
+                    Almira Bastari dan Sang Alkemis karya
+                    Paulo Coelho: Kajian Sastra Bandingan
+
                 </h5>
 
             </div>
 
+
+
+            <!-- 2 -->
+
+            <div class="modern-card publication mb-4 reveal">
+
+                <span class="badge-modern">
+                    SINTA 5
+                </span>
+
+
+                <h5>
+
+                    Analisis Wacana Kritis Model Teun A.
+                    Van Dijk Terhadap Pemberitaan Daring
+                    Mengenai Wacana Sistem Zonasi Oleh
+                    Nadiem Makarim di Portal Berita
+                    Metrotvnews.com
+
+                </h5>
+
+            </div>
+
+
+
+            <!-- 3 -->
 
             <div class="modern-card publication mb-4 reveal">
 
@@ -1374,15 +3079,22 @@
                     SINTA 4
                 </span>
 
-                <h5 class="mt-3 fw-bold">
-                    Analisis Diksi dan Gaya Bahasa pada Spanduk
-                    Pedagang Kaki Lima di Desa Sukabungah Kabupaten
-                    Bekasi sebagai Rekomendasi Bahan Ajar Materi
-                    Bahasa Indonesia di SMP
+
+                <h5>
+
+                    Analisis Diksi dan Gaya Bahasa pada
+                    Spanduk Pedagang Kaki Lima di Desa
+                    Sukabungah Kabupaten Bekasi sebagai
+                    Rekomendasi Bahan Ajar Materi Bahasa
+                    Indonesia di SMP
+
                 </h5>
 
             </div>
 
+
+
+            <!-- 4 -->
 
             <div class="modern-card publication mb-4 reveal">
 
@@ -1390,14 +3102,20 @@
                     SINTA 3
                 </span>
 
-                <h5 class="mt-3 fw-bold">
-                    Pembinaan Bahasa Indonesia melalui Literasi
-                    Interaktif di TBM Pustaka Berkiprah Kabupaten
-                    Karawang
+
+                <h5>
+
+                    Pembinaan Bahasa Indonesia melalui
+                    Literasi Interaktif di TBM Pustaka
+                    Berkiprah Kabupaten Karawang
+
                 </h5>
 
             </div>
 
+
+
+            <!-- 5 -->
 
             <div class="modern-card publication reveal">
 
@@ -1405,11 +3123,15 @@
                     Non-SINTA
                 </span>
 
-                <h5 class="mt-3 fw-bold">
-                    Analisis Framing Model Zhongdang Pan dan Gerald M.
-                    Kosicki terhadap Pemberitaan Peringatan Hari Guru
-                    Nasional 2024 pada Media Online Sokoguru.id dan
-                    MediaIndonesia.com
+
+                <h5>
+
+                    Analisis Framing Model Zhongdang Pan
+                    dan Gerald M. Kosicki terhadap
+                    Pemberitaan Peringatan Hari Guru
+                    Nasional 2024 pada Media Online
+                    Sokoguru.id dan MediaIndonesia.com
+
                 </h5>
 
             </div>
@@ -1421,7 +3143,10 @@
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
 
 <section id="contact">
 
@@ -1431,26 +3156,32 @@
 
             <div class="row align-items-center">
 
+
                 <div class="col-lg-6">
 
-                    <span class="text-white-50">
-                        CONTACT ME
-                    </span>
+                    <div class="section-label text-white-50">
+                        Contact Me
+                    </div>
 
-                    <h2 class="display-5 fw-bold mt-2">
+
+                    <h2 class="display-6 fw-bold mt-2">
                         Mari Terhubung
                     </h2>
 
+
                     <p class="mt-3 opacity-75">
+
                         Terbuka untuk kesempatan mengajar,
                         kegiatan pendidikan, public speaking,
-                        event, dan kolaborasi lainnya.
+                        event, dan kolaborasi.
+
                     </p>
 
                 </div>
 
 
                 <div class="col-lg-6 mt-4 mt-lg-0">
+
 
                     <div class="contact-item">
 
@@ -1485,13 +3216,37 @@
                     </div>
 
 
-                    <a href="#"
-                       class="btn btn-light btn-modern mt-2">
+                    <div class="d-flex flex-column flex-sm-row gap-2">
 
-                        <i class="bi bi-instagram"></i>
-                        Instagram
 
-                    </a>
+                        <!-- EMAIL -->
+
+                        <a
+                            href="mailto:layungsitinurazizah929@gmail.com"
+                            class="btn btn-light btn-modern">
+
+                            <i class="bi bi-envelope me-2"></i>
+
+                            Email Saya
+
+                        </a>
+
+
+                        <!-- WHATSAPP -->
+
+                        <a
+                            href="https://wa.me/6285775104241"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-success btn-modern">
+
+                            <i class="bi bi-whatsapp me-2"></i>
+
+                            WhatsApp
+
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -1504,15 +3259,26 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
 <footer>
 
-    <div class="container text-center">
+    <div class="container">
 
-        <p class="mb-0">
+        <p>
+
             © 2026 Layung Siti Nurazizah.
             All Rights Reserved.
+
+        </p>
+
+        <p class="mt-1">
+
+            Portfolio Pendidikan & Profesional
+
         </p>
 
     </div>
@@ -1520,41 +3286,249 @@
 </footer>
 
 
-<!-- ================= BOOTSTRAP JS ================= -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- =====================================================
+     BACK TO TOP
+====================================================== -->
+
+<button
+    class="back-top"
+    id="backTop"
+    aria-label="Kembali ke atas">
+
+    <i class="bi bi-arrow-up"></i>
+
+</button>
 
 
-<!-- ================= ANIMATION ================= -->
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+====================================================== -->
+
+<a
+    href="https://wa.me/6285775104241"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp"
+    aria-label="WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
 
 <script>
 
-    const reveals = document.querySelectorAll(".reveal");
+    /* =====================================================
+       NAVBAR EFFECT
+    ===================================================== */
 
-    const observer = new IntersectionObserver(
-        entries => {
+    const navbar =
+        document.getElementById("navbar");
 
-            entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
+    window.addEventListener(
+        "scroll",
+        function () {
 
-                    entry.target.classList.add("active");
+            if (window.scrollY > 30) {
 
-                }
+                navbar.classList.add("scrolled");
 
-            });
+            } else {
 
-        },
-        {
-            threshold: 0.12
+                navbar.classList.remove("scrolled");
+
+            }
+
         }
     );
 
-    reveals.forEach(element => {
-        observer.observe(element);
-    });
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(
+                    function(entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target
+                                .classList
+                                .add("active");
+
+                            revealObserver
+                                .unobserve(
+                                    entry.target
+                                );
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    revealElements.forEach(
+        function(element) {
+
+            revealObserver.observe(
+                element
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    const backTop =
+        document.getElementById("backTop");
+
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (window.scrollY > 400) {
+
+                backTop.classList
+                    .add("show");
+
+            } else {
+
+                backTop.classList
+                    .remove("show");
+
+            }
+
+        }
+    );
+
+
+    backTop.addEventListener(
+        "click",
+        function () {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+
+
+    /* =====================================================
+       CLOSE MOBILE NAVBAR
+       setelah menu diklik
+    ===================================================== */
+
+    const navLinks =
+        document.querySelectorAll(
+            ".navbar .nav-link"
+        );
+
+
+    const navbarMenu =
+        document.getElementById(
+            "navbarMenu"
+        );
+
+
+    navLinks.forEach(
+        function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    const collapse =
+                        bootstrap.Collapse
+                        .getInstance(
+                            navbarMenu
+                        );
+
+                    if (collapse) {
+
+                        collapse.hide();
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       IMAGE ERROR HANDLER
+       Jika gambar salah nama/path
+    ===================================================== */
+
+    document.querySelectorAll("img")
+        .forEach(
+            function(img) {
+
+                img.addEventListener(
+                    "error",
+                    function() {
+
+                        console.warn(
+                            "Gambar tidak ditemukan:",
+                            img.src
+                        );
+
+                    }
+                );
+
+            }
+        );
 
 </script>
+
 
 </body>
 </html>
