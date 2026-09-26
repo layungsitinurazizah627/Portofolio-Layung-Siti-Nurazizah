@@ -1,757 +1,961 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Portfolio - Layung Siti Nurazizah</title>
 
-<title>Portfolio - Layung Siti Nurazizah</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap 5 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f8f9fa;
-        color: #343a40;
-    }
-
-    /* =========================
-       COLOR CUSTOM
-    ========================== */
-    :root {
-        --primary-color: #c04434;
-        --primary-dark: #a93629;
-        --light-bg: #f8f9fa;
-    }
-
-    /* =========================
-       NAVBAR
-    ========================== */
-    .bg-primary-custom {
-        background-color: var(--primary-color) !important;
-    }
-
-    .text-primary-custom {
-        color: var(--primary-color) !important;
-    }
-
-    .btn-primary-custom {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        color: white;
-    }
-
-    .btn-primary-custom:hover {
-        background-color: var(--primary-dark);
-        border-color: var(--primary-dark);
-        color: white;
-    }
-
-    .btn-outline-primary-custom {
-        color: var(--primary-color);
-        border: 1px solid var(--primary-color);
-    }
-
-    .btn-outline-primary-custom:hover {
-        background-color: var(--primary-color);
-        color: white;
-    }
-
-    /* =========================
-       PROFILE
-    ========================== */
-    .profile-section {
-        padding: 50px 0;
-    }
-
-    .profile-info i {
-        font-size: 1.4rem;
-        min-width: 30px;
-    }
-
-    .info-box {
-        background-color: white;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .info-box p {
-        margin-top: 25px;
-        line-height: 1.8;
-        text-align: justify;
-    }
-
-    .info-label {
-        font-weight: 600;
-        color: #343a40;
-    }
-
-    /* =========================
-       HERO / JUMBOTRON
-    ========================== */
-    #home.jumbotron {
-        background-image: url('bglayung.jpeg.jpeg');
-        background-size: cover;
-        background-position: center;
-        color: white;
-        padding: 45px 0;
-        border-radius: 15px;
-        margin-bottom: 30px;
-    }
-
-    #home .container {
-        background-color: rgba(0, 0, 0, 0.55);
-        padding: 30px 20px;
-        border-radius: 15px;
-    }
-
-    #home img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border: 5px solid white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    #home h1 {
-        font-size: 2.2rem;
-        margin-top: 20px;
-        font-weight: 700;
-    }
-
-    #home h3 {
-        font-size: 1.2rem;
-    }
-
-    /* =========================
-       SECTION TITLE
-    ========================== */
-    .section-title {
-        color: #2c3e50;
-        border-bottom: 3px solid var(--primary-color);
-        display: inline-block;
-        padding-bottom: 7px;
-        margin-bottom: 30px;
-        font-weight: 700;
-    }
-
-    /* =========================
-       CARD
-    ========================== */
-    .card {
-        transition: all 0.3s ease;
-        margin-bottom: 20px;
-        border-radius: 12px;
-        overflow: hidden;
-        border: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .card-header {
-        border: none;
-    }
-
-    .card-title {
-        color: var(--primary-color);
-        font-weight: 600;
-    }
-
-    .card-text {
-        color: #6c757d;
-        font-size: 0.95rem;
-    }
-
-    /* =========================
-       GALLERY
-    ========================== */
-    .gallery-img {
-        width: 100%;
-        height: 210px;
-        object-fit: cover;
-    }
-
-    /* =========================
-       TIMELINE
-    ========================== */
-    .timeline {
-        position: relative;
-        padding-left: 30px;
-    }
-
-    .timeline:before {
-        content: '';
-        position: absolute;
-        left: 10px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: var(--primary-color);
-    }
-
-    .timeline-item {
-        position: relative;
-        margin-bottom: 30px;
-    }
-
-    .timeline-item:last-child {
-        margin-bottom: 0;
-    }
-
-    .timeline-item:before {
-        content: '';
-        position: absolute;
-        left: -30px;
-        top: 5px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: var(--primary-color);
-        border: 2px solid white;
-        box-shadow: 0 0 0 2px var(--primary-color);
-    }
-
-    /* =========================
-       PUBLICATION
-    ========================== */
-    .publication-card {
-        border-left: 5px solid var(--primary-color);
-    }
-
-    .publication-index {
-        width: 35px;
-        height: 35px;
-        background-color: var(--primary-color);
-        color: white;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        flex-shrink: 0;
-    }
-
-    .sinta-badge {
-        display: inline-block;
-        padding: 5px 12px;
-        border-radius: 20px;
-        background-color: var(--primary-color);
-        color: white;
-        font-size: 0.8rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .non-sinta-badge {
-        display: inline-block;
-        padding: 5px 12px;
-        border-radius: 20px;
-        background-color: #6c757d;
-        color: white;
-        font-size: 0.8rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .publication-title {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        color: #343a40;
-        font-weight: 600;
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
-    .contact-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .contact-item i {
-        font-size: 1.3rem;
-        width: 35px;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
-    @media (max-width: 768px) {
-
-        #home h1 {
-            font-size: 1.7rem;
+    <style>
+        :root {
+            --primary: #c04434;
+            --primary-dark: #8f2d22;
+            --secondary: #f8e7e3;
+            --dark: #1f2937;
+            --text: #64748b;
+            --white: #ffffff;
+            --bg: #fffaf9;
         }
 
-        #home h3 {
-            font-size: 1rem;
+        * {
+            box-sizing: border-box;
         }
 
-        #home img {
-            width: 120px;
-            height: 120px;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .info-box {
-            padding: 20px;
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            overflow-x: hidden;
         }
 
-        .profile-section {
+        /* ================================
+           SCROLLBAR
+        ================================= */
+        ::-webkit-scrollbar {
+            width: 9px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 20px;
+        }
+
+        /* ================================
+           NAVBAR
+        ================================= */
+        .navbar {
+            background: rgba(192, 68, 52, 0.92) !important;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 14px 0;
+            transition: .4s;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,.9) !important;
+            margin-left: 12px;
+            position: relative;
+            transition: .3s;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 12px;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: .3s;
+        }
+
+        .nav-link:hover::after {
+            width: calc(100% - 24px);
+        }
+
+        /* ================================
+           HERO
+        ================================= */
+        .hero {
+            min-height: 92vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: white;
+
+            /*
+              PENTING:
+              Pastikan file berada di folder yang sama
+              dengan file HTML.
+
+              Jika nama file sebenarnya:
+              bglayung.jpeg
+              gunakan bglayung.jpeg
+
+              Jika sebenarnya:
+              bglayung.jpeg.jpeg
+              biarkan nama sesuai file tersebut.
+            */
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(91, 22, 14, .88),
+                    rgba(192, 68, 52, .55)
+                ),
+                url("bglayung.jpeg") center center / cover no-repeat;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255,255,255,.15), transparent 25%),
+                radial-gradient(circle at 85% 80%, rgba(255,255,255,.12), transparent 25%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-photo {
+            width: 230px;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid rgba(255,255,255,.9);
+            box-shadow:
+                0 0 0 12px rgba(255,255,255,.08),
+                0 20px 60px rgba(0,0,0,.35);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-top: 30px;
+        }
+
+        .hero h1 span {
+            color: #ffd7d0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: .9;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .btn-modern {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0,0,0,.2);
+        }
+
+        .btn-light-modern {
+            background: white;
+            color: var(--primary);
+            border: none;
+        }
+
+        .btn-outline-modern {
+            color: white;
+            border: 1px solid rgba(255,255,255,.7);
+        }
+
+        .btn-outline-modern:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* ================================
+           SECTION
+        ================================= */
+        section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .section-heading {
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: .8rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .section-line {
+            width: 70px;
+            height: 5px;
+            background: var(--primary);
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+
+        /* ================================
+           GLASS CARD
+        ================================= */
+        .modern-card {
+            background: rgba(255,255,255,.82);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,.7);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 15px 45px rgba(86, 36, 30, .08);
+            transition: .4s;
+            height: 100%;
+        }
+
+        .modern-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(86, 36, 30, .15);
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: var(--secondary);
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* ================================
+           ABOUT
+        ================================= */
+        .about-text {
+            color: var(--text);
+            line-height: 2;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .info-item i {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 12px;
+            margin-right: 14px;
+        }
+
+        /* ================================
+           STATS
+        ================================= */
+        .stats-section {
+            background: var(--primary);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .stat-text {
+            opacity: .8;
+        }
+
+        /* ================================
+           GALLERY
+        ================================= */
+        .gallery-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 22px;
+            height: 280px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.12);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .6s;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: end;
+            padding: 25px;
+            background: linear-gradient(
+                transparent 25%,
+                rgba(0,0,0,.8)
+            );
+            color: white;
+        }
+
+        .gallery-overlay h5 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* ================================
+           TIMELINE
+        ================================= */
+        .timeline {
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e7b2aa;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-item h5 {
+            font-weight: 700;
+        }
+
+        .timeline-item p,
+        .timeline-item li {
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* ================================
+           SKILLS
+        ================================= */
+        .skill-tag {
+            display: inline-block;
+            padding: 10px 17px;
+            margin: 5px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ================================
+           PUBLICATION
+        ================================= */
+        .publication {
+            border-left: 5px solid var(--primary);
+        }
+
+        .badge-modern {
+            background: var(--primary);
+            color: white;
+            padding: 7px 14px;
+            border-radius: 50px;
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        /* ================================
+           CONTACT
+        ================================= */
+        .contact-card {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+            color: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 25px 60px rgba(192,68,52,.25);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 18px;
+        }
+
+        /* ================================
+           FOOTER
+        ================================= */
+        footer {
+            background: #241311;
+            color: rgba(255,255,255,.7);
             padding: 30px 0;
         }
 
-        .gallery-img {
-            height: 220px;
+        /* ================================
+           ANIMATION
+        ================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all .8s ease;
         }
-    }
-</style>
 
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
+        /* ================================
+           MOBILE
+        ================================= */
+        @media(max-width:768px) {
+
+            .hero {
+                min-height: 100vh;
+                text-align: center;
+            }
+
+            .hero-photo {
+                width: 170px;
+                height: 170px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .modern-card {
+                padding: 22px;
+            }
+
+            .contact-card {
+                padding: 30px 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+<!-- ================= NAVBAR ================= -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
 
+        <a class="navbar-brand" href="#home">
+            Layung Siti Nurazizah
+        </a>
 
-<div class="container">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
 
-    <a class="navbar-brand fw-bold" href="#">
-        Layung Siti Nurazizah
-    </a>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-        <span class="navbar-toggler-icon"></span>
+            <ul class="navbar-nav ms-auto">
 
-    </button>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Profil</a>
+                </li>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Galeri</a>
+                </li>
 
-        <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Pengalaman</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#profile">
-                    Profil
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Kemampuan</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#gallery">
-                    Galeri
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Pendidikan</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#experience">
-                    Pengalaman
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#publication">Publikasi</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#skills">
-                    Kemampuan
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Kontak</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#education">
-                    Pendidikan
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#achievements">
-                    Publikasi
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">
-                    Kontak
-                </a>
-            </li>
-
-        </ul>
-
+            </ul>
+        </div>
     </div>
-</div>
-
-
 </nav>
 
-<!-- =====================================================
-     PROFILE SECTION
-===================================================== -->
 
-<section id="profile" class="profile-section">
+<!-- ================= HERO ================= -->
 
+<header id="home" class="hero">
 
-<div class="container">
+    <div class="container hero-content text-center">
 
-    <!-- HERO -->
-    <div class="jumbotron" id="home">
+        <img
+            src="profilayung.jpeg.jpeg"
+            alt="Layung Siti Nurazizah"
+            class="hero-photo">
 
-        <div class="container text-center">
+        <h1>
+            Layung Siti <span>Nurazizah</span>
+        </h1>
 
-            <img
-                src="profilayung.jpeg.jpeg"
-                class="rounded-circle img-thumbnail"
-                alt="Foto Layung Siti Nurazizah">
+        <p class="hero-subtitle">
+            Mahasiswi Pendidikan Bahasa dan Sastra Indonesia
+        </p>
 
-            <h1>
-                Layung Siti Nurazizah
-            </h1>
+        <p class="mt-3 opacity-75">
+            Educator • MC • Public Relations • Event Organizer
+        </p>
 
-            <h3 class="lead">
-                Mahasiswi Pendidikan Bahasa dan Sastra Indonesia
-            </h3>
+        <div class="hero-buttons">
+
+            <a href="#about"
+               class="btn btn-modern btn-light-modern me-2">
+                <i class="bi bi-person"></i>
+                Tentang Saya
+            </a>
+
+            <a href="#contact"
+               class="btn btn-modern btn-outline-modern">
+                <i class="bi bi-envelope"></i>
+                Hubungi Saya
+            </a>
 
         </div>
 
     </div>
 
-
-    <!-- PROFILE INFORMATION -->
-    <div class="row justify-content-center">
-
-        <div class="col-lg-10">
-
-            <div class="info-box">
-
-                <div class="profile-info mb-3 d-flex align-items-center">
-
-                    <i class="bi bi-book me-3 text-primary-custom"></i>
-
-                    <span>
-                        <span class="info-label">
-                            Program Studi:
-                        </span>
-                        Pendidikan Bahasa dan Sastra Indonesia
-                    </span>
-
-                </div>
+</header>
 
 
-                <div class="profile-info mb-3 d-flex align-items-center">
+<!-- ================= ABOUT ================= -->
 
-                    <i class="bi bi-building me-3 text-primary-custom"></i>
+<section id="about">
 
-                    <span>
-                        <span class="info-label">
-                            Universitas:
-                        </span>
-                        Universitas Singaperbangsa Karawang
-                    </span>
+    <div class="container">
 
-                </div>
+        <div class="section-heading text-center reveal">
 
-
-                <div class="profile-info mb-3 d-flex align-items-center">
-
-                    <i class="bi bi-mortarboard me-3 text-primary-custom"></i>
-
-                    <span>
-                        <span class="info-label">
-                            Pendidikan:
-                        </span>
-                        S1 Pendidikan Bahasa dan Sastra Indonesia
-                    </span>
-
-                </div>
-
-
-                <div class="profile-info mb-3 d-flex align-items-center">
-
-                    <i class="bi bi-phone me-3 text-primary-custom"></i>
-
-                    <span>
-                        <span class="info-label">
-                            Kontak:
-                        </span>
-                        0857-7510-4241
-                    </span>
-
-                </div>
-
-
-                <p>
-
-                    Lulusan S1 Pendidikan Bahasa dan Sastra Indonesia
-                    Universitas Singaperbangsa Karawang yang memiliki minat
-                    dan pengalaman dalam bidang pendidikan.
-
-                    Memiliki pengalaman mengajar pada jenjang SMP melalui
-                    kegiatan PLP, serta pengalaman praktik mengajar pada
-                    jenjang SD dan SMA.
-
-                    Selain itu, berpengalaman mengajar anak-anak di TPQ
-                    selama kegiatan Kuliah Kerja Nyata (KKN) dan memberikan
-                    les privat kepada anak usia pra-SD dan SD secara
-                    <i>door to door</i>.
-
-                    Terbiasa berinteraksi dengan peserta didik,
-                    menyampaikan materi sesuai usia dan kemampuan siswa,
-                    mengelola proses pembelajaran, serta menciptakan
-                    suasana belajar yang nyaman dan menyenangkan.
-
-                    Memiliki kemampuan komunikasi yang baik, bertanggung
-                    jawab, mampu bekerja sama, dan memiliki kemauan untuk
-                    terus belajar serta mengembangkan kemampuan di bidang
-                    pendidikan.
-
-                </p>
-
+            <div class="section-label">
+                About Me
             </div>
 
-        </div>
+            <h2 class="section-title">
+                Mengenal Saya
+            </h2>
 
-    </div>
-
-</div>
-
-
-</section>
-
-<!-- =====================================================
-     GALLERY SECTION
-===================================================== -->
-
-<section id="gallery" class="py-5">
-
-
-<div class="container">
-
-    <h2 class="section-title">
-        Galeri Kegiatan
-    </h2>
-
-    <div id="cardCarousel"
-         class="carousel slide"
-         data-bs-ride="carousel">
-
-        <div class="carousel-inner">
-
-            <!-- SLIDE 1 -->
-            <div class="carousel-item active">
-
-                <div class="row justify-content-center">
-
-                    <!-- CARD 1 -->
-                    <div class="col-md-3 mb-4">
-
-                        <div class="card h-100">
-
-                            <img
-                                src="dutapendidikan.jpg"
-                                class="card-img-top gallery-img"
-                                alt="Duta Pendidikan FKIP Unsika">
-
-                            <div class="card-body">
-
-                                <h5 class="card-title">
-                                    Duta Pendidikan FKIP Unsika
-                                </h5>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- CARD 2 -->
-                    <div class="col-md-3 mb-4">
-
-                        <div class="card h-100">
-
-                            <img
-                                src="bahasainggris.jpg"
-                                class="card-img-top gallery-img"
-                                alt="Tim Pondok Bahasa Inggris">
-
-                            <div class="card-body">
-
-                                <h5 class="card-title">
-                                    Tim Pondok Bahasa Inggris Mr. Jo
-                                </h5>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- CARD 3 -->
-                    <div class="col-md-3 mb-4">
-
-                        <div class="card h-100">
-
-                            <img
-                                src="sbc.jpg"
-                                class="card-img-top gallery-img"
-                                alt="Marvellous Public Speaking SBC">
-
-                            <div class="card-body">
-
-                                <h5 class="card-title">
-                                    Marvellous Public Speaking SBC
-                                </h5>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- CARD 4 -->
-                    <div class="col-md-3 mb-4">
-
-                        <div class="card h-100">
-
-                            <img
-                                src="protokoler.jpg"
-                                class="card-img-top gallery-img"
-                                alt="Diskusi Sastra">
-
-                            <div class="card-body">
-
-                                <h5 class="card-title">
-                                    Diskusi Sastra
-                                </h5>
-
-                                <p class="card-text">
-                                    Tren Mutakhir Teori Sastra
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
+            <div class="section-line mx-auto"></div>
 
         </div>
 
 
-        <!-- CAROUSEL BUTTON -->
-        <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#cardCarousel"
-            data-bs-slide="prev">
+        <div class="row g-4">
 
-            <span class="carousel-control-prev-icon"></span>
+            <div class="col-lg-5 reveal">
 
-            <span class="visually-hidden">
-                Previous
-            </span>
+                <div class="modern-card">
 
-        </button>
+                    <div class="icon-box">
+                        <i class="bi bi-person-heart"></i>
+                    </div>
 
-
-        <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#cardCarousel"
-            data-bs-slide="next">
-
-            <span class="carousel-control-next-icon"></span>
-
-            <span class="visually-hidden">
-                Next
-            </span>
-
-        </button>
-
-    </div>
-
-</div>
-
-
-</section>
-
-<!-- =====================================================
-     EXPERIENCE SECTION
-===================================================== -->
-
-<section id="experience" class="py-5 bg-light">
-
-
-<div class="container">
-
-    <h2 class="section-title">
-        Pengalaman
-    </h2>
-
-    <div class="row">
-
-        <!-- PENGALAMAN KERJA -->
-        <div class="col-md-6 mb-4">
-
-            <div class="card h-100">
-
-                <div class="card-header bg-primary-custom text-white">
-
-                    <h4 class="mb-0">
-                        Pengalaman Kerja
+                    <h4 class="fw-bold mb-4">
+                        Profil
                     </h4>
 
+                    <div class="info-item">
+                        <i class="bi bi-book"></i>
+                        <div>
+                            <small>Program Studi</small>
+                            <strong class="d-block">
+                                Pendidikan Bahasa dan Sastra Indonesia
+                            </strong>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-building"></i>
+                        <div>
+                            <small>Universitas</small>
+                            <strong class="d-block">
+                                Universitas Singaperbangsa Karawang
+                            </strong>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-mortarboard"></i>
+                        <div>
+                            <small>Pendidikan</small>
+                            <strong class="d-block">
+                                S1 Pendidikan Bahasa dan Sastra Indonesia
+                            </strong>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <div>
+                            <small>Domisili</small>
+                            <strong class="d-block">
+                                Bekasi, Jawa Barat
+                            </strong>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="card-body">
+            </div>
+
+
+            <div class="col-lg-7 reveal">
+
+                <div class="modern-card">
+
+                    <div class="icon-box">
+                        <i class="bi bi-stars"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-4">
+                        Tentang Saya
+                    </h4>
+
+                    <p class="about-text">
+                        Lulusan S1 Pendidikan Bahasa dan Sastra Indonesia
+                        Universitas Singaperbangsa Karawang yang memiliki
+                        minat dan pengalaman dalam bidang pendidikan.
+                    </p>
+
+                    <p class="about-text">
+                        Memiliki pengalaman mengajar pada jenjang SMP
+                        melalui kegiatan PLP, serta pengalaman praktik
+                        mengajar pada jenjang SD dan SMA.
+                    </p>
+
+                    <p class="about-text">
+                        Selain itu, berpengalaman mengajar anak-anak di TPQ
+                        selama kegiatan KKN dan memberikan les privat
+                        kepada anak usia pra-SD dan SD secara
+                        <i>door to door</i>.
+                    </p>
+
+                    <p class="about-text mb-0">
+                        Memiliki kemampuan komunikasi yang baik,
+                        bertanggung jawab, mampu bekerja sama, serta
+                        memiliki kemauan untuk terus belajar dan
+                        mengembangkan kemampuan di bidang pendidikan,
+                        public speaking, dan organisasi.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row text-center g-4">
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-number">5+</div>
+                <div class="stat-text">Publikasi</div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-number">8+</div>
+                <div class="stat-text">Kegiatan MC</div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-number">5+</div>
+                <div class="stat-text">Kegiatan Organisasi</div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-number">4</div>
+                <div class="stat-text">Jenjang Mengajar</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="container">
+
+        <div class="section-heading text-center reveal">
+
+            <div class="section-label">
+                My Activities
+            </div>
+
+            <h2 class="section-title">
+                Galeri Kegiatan
+            </h2>
+
+            <div class="section-line mx-auto"></div>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3 reveal">
+
+                <div class="gallery-card">
+
+                    <img src="dutapendidikan.jpg"
+                         alt="Duta Pendidikan FKIP Unsika">
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Duta Pendidikan FKIP Unsika
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3 reveal">
+
+                <div class="gallery-card">
+
+                    <img src="bahasainggris.jpg"
+                         alt="Tim Pondok Bahasa Inggris">
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Pondok Bahasa Inggris Mr. Jo
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3 reveal">
+
+                <div class="gallery-card">
+
+                    <img src="sbc.jpg"
+                         alt="Marvellous Public Speaking SBC">
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Marvellous Public Speaking SBC
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3 reveal">
+
+                <div class="gallery-card">
+
+                    <img src="protokoler.jpg"
+                         alt="Diskusi Sastra">
+
+                    <div class="gallery-overlay">
+
+                        <h5>
+                            Diskusi Sastra
+                        </h5>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience" style="background:#fff5f3;">
+
+    <div class="container">
+
+        <div class="section-heading text-center reveal">
+
+            <div class="section-label">
+                Experience
+            </div>
+
+            <h2 class="section-title">
+                Pengalaman
+            </h2>
+
+            <div class="section-line mx-auto"></div>
+
+        </div>
+
+
+        <div class="row g-5">
+
+            <div class="col-lg-6 reveal">
+
+                <div class="modern-card">
+
+                    <h4 class="fw-bold mb-4">
+                        <i class="bi bi-briefcase-fill text-danger me-2"></i>
+                        Pengalaman Kerja
+                    </h4>
 
                     <div class="timeline">
 
                         <div class="timeline-item">
 
                             <h5>
-                                Tim Marvellous Public Speaking SBC (2023)
+                                Tim Marvellous Public Speaking SBC
                             </h5>
 
-                            <ul>
+                            <small class="text-danger">
+                                2023
+                            </small>
+
+                            <ul class="mt-2">
 
                                 <li>
-                                    Mendokumentasikan seluruh sesi
-                                    pelatihan public speaking secara visual
-                                    berupa foto dan video.
+                                    Mendokumentasikan kegiatan dalam
+                                    bentuk foto dan video.
                                 </li>
 
                                 <li>
-                                    Mengelola kebutuhan teknis selama acara,
-                                    seperti sound system dan presentasi.
+                                    Mengelola kebutuhan teknis acara.
                                 </li>
 
                                 <li>
-                                    Mengedit video kegiatan untuk keperluan
-                                    publikasi dan dokumentasi resmi.
+                                    Mengedit video untuk publikasi.
                                 </li>
 
                             </ul>
@@ -762,14 +966,18 @@
                         <div class="timeline-item">
 
                             <h5>
-                                Tim Pondok Bahasa Inggris Mr. Jo Karawang (2025)
+                                Tim Pondok Bahasa Inggris Mr. Jo
                             </h5>
 
-                            <ul>
+                            <small class="text-danger">
+                                2025
+                            </small>
+
+                            <ul class="mt-2">
 
                                 <li>
-                                    Mengedit video kegiatan untuk keperluan
-                                    publikasi dan dokumentasi resmi.
+                                    Mengedit video kegiatan untuk
+                                    kebutuhan publikasi.
                                 </li>
 
                             </ul>
@@ -780,14 +988,18 @@
                         <div class="timeline-item">
 
                             <h5>
-                                Guru Les Privat Calistung (2025)
+                                Guru Les Privat Calistung
                             </h5>
 
-                            <ul>
+                            <small class="text-danger">
+                                2025
+                            </small>
+
+                            <ul class="mt-2">
 
                                 <li>
-                                    Mengajar siswa tingkat PAUD dan SD
-                                    dalam membaca, menulis, dan berhitung.
+                                    Mengajar membaca, menulis dan berhitung
+                                    untuk siswa PAUD dan SD.
                                 </li>
 
                             </ul>
@@ -798,37 +1010,18 @@
                         <div class="timeline-item">
 
                             <h5>
-                                Pengalaman Mengajar melalui PLP
+                                Praktik Mengajar / PLP
                             </h5>
 
-                            <ul>
+                            <ul class="mt-2">
 
                                 <li>
-                                    Melaksanakan praktik mengajar pada
-                                    jenjang SMP.
+                                    Mengajar pada jenjang SMP.
                                 </li>
 
                                 <li>
-                                    Menyampaikan materi pembelajaran sesuai
-                                    dengan kebutuhan dan karakteristik peserta didik.
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-
-                        <div class="timeline-item">
-
-                            <h5>
-                                Praktik Mengajar SD dan SMA
-                            </h5>
-
-                            <ul>
-
-                                <li>
-                                    Melaksanakan praktik pembelajaran pada
-                                    jenjang SD dan SMA.
+                                    Praktik mengajar pada jenjang SD
+                                    dan SMA.
                                 </li>
 
                             </ul>
@@ -842,11 +1035,11 @@
                                 Pengajar TPQ melalui KKN
                             </h5>
 
-                            <ul>
+                            <ul class="mt-2">
 
                                 <li>
                                     Mengajar anak-anak di TPQ selama
-                                    kegiatan Kuliah Kerja Nyata (KKN).
+                                    kegiatan KKN.
                                 </li>
 
                             </ul>
@@ -859,51 +1052,35 @@
 
             </div>
 
-        </div>
 
+            <div class="col-lg-6 reveal">
 
-        <!-- PENGALAMAN ORGANISASI -->
-        <div class="col-md-6 mb-4">
+                <div class="modern-card">
 
-            <div class="card h-100">
-
-                <div class="card-header bg-primary-custom text-white">
-
-                    <h4 class="mb-0">
+                    <h4 class="fw-bold mb-4">
+                        <i class="bi bi-people-fill text-danger me-2"></i>
                         Pengalaman Organisasi
                     </h4>
 
-                </div>
+                    <div class="skill-tag">
+                        OSIS SMAN 1 Bojongmangu
+                    </div>
 
-                <div class="card-body">
+                    <div class="skill-tag">
+                        HIMADIKSATRASIA FKIP Unsika
+                    </div>
 
-                    <ul class="list-group list-group-flush">
+                    <div class="skill-tag">
+                        Badan Legislatif Mahasiswa FKIP Unsika
+                    </div>
 
-                        <li class="list-group-item">
-                            OSIS SMAN 1 Bojongmangu
-                        </li>
+                    <div class="skill-tag">
+                        UKM Duta, Humas & Protokoler FKIP Unsika
+                    </div>
 
-                        <li class="list-group-item">
-                            HIMADIKSATRASIA FKIP Unsika –
-                            Sekretaris Bidang
-                        </li>
-
-                        <li class="list-group-item">
-                            Badan Legislatif Mahasiswa FKIP Unsika –
-                            Komisi A
-                        </li>
-
-                        <li class="list-group-item">
-                            UKM Duta, Humas, dan Protokoler FKIP Unsika –
-                            Sekretaris 1
-                        </li>
-
-                        <li class="list-group-item">
-                            UKM Protokoler Mahasiswa FKIP Unsika –
-                            Sekretaris 1
-                        </li>
-
-                    </ul>
+                    <div class="skill-tag">
+                        UKM Protokoler Mahasiswa FKIP Unsika
+                    </div>
 
                 </div>
 
@@ -913,183 +1090,110 @@
 
     </div>
 
-</div>
-
-
 </section>
 
-<!-- =====================================================
-     SKILLS SECTION
-===================================================== -->
 
-<section id="skills" class="py-5">
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading text-center reveal">
+
+            <div class="section-label">
+                My Skills
+            </div>
+
+            <h2 class="section-title">
+                Kemampuan
+            </h2>
+
+            <div class="section-line mx-auto"></div>
+
+        </div>
 
 
-<div class="container">
+        <div class="row g-4">
 
-    <h2 class="section-title">
-        Kemampuan
-    </h2>
+            <div class="col-lg-4 reveal">
 
-    <div class="row">
+                <div class="modern-card">
 
-        <!-- MC -->
-        <div class="col-md-4 mb-4">
+                    <div class="icon-box">
+                        <i class="bi bi-mic-fill"></i>
+                    </div>
 
-            <div class="card h-100">
-
-                <div class="card-header bg-primary-custom text-white">
-
-                    <h4 class="mb-0">
-                        MC
+                    <h4 class="fw-bold">
+                        MC & Public Speaking
                     </h4>
 
-                </div>
+                    <p class="text-muted">
+                        Berpengalaman menjadi MC dan terlibat dalam
+                        berbagai kegiatan formal maupun edukatif.
+                    </p>
 
-                <div class="card-body">
-
-                    <ul class="list-unstyled">
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Turnamen Sepak Bola Nasional di Yonif Para Raider 305 (2023)
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            PKKMB Unsika (2023 dan 2025)
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Maulid Nabi Muhammad SAW Unsika (2023)
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Rumah Belajar bersama Duta Bahasa Kab. Bekasi (2025)
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Talkshow Edukasi Bahaya Pinjol Ilegal & Judi Online
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Masa Orientasi Pengurus Himpunan Mahasiswa
-                            & Latihan Keorganisasian Pengurus Ormawa FKIP Unsika
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Diskusi Sastra: Tren Mutakhir Teori Sastra
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Pengenalan Dunia Kerja PT PLN Enjiniring
-                            dan Public Speaking SMKN 34 Jakarta
-                        </li>
-
-                    </ul>
+                    <div>
+                        <span class="skill-tag">MC</span>
+                        <span class="skill-tag">Public Speaking</span>
+                        <span class="skill-tag">Moderator</span>
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
 
+            <div class="col-lg-4 reveal">
 
-        <!-- EVENT ORGANIZER -->
-        <div class="col-md-4 mb-4">
+                <div class="modern-card">
 
-            <div class="card h-100">
+                    <div class="icon-box">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
 
-                <div class="card-header bg-primary-custom text-white">
-
-                    <h4 class="mb-0">
+                    <h4 class="fw-bold">
                         Event Organizer
                     </h4>
 
-                </div>
+                    <p class="text-muted">
+                        Berpengalaman terlibat dalam penyelenggaraan
+                        berbagai kegiatan kampus dan acara formal.
+                    </p>
 
-                <div class="card-body">
-
-                    <ul class="list-unstyled">
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Seminar Internasional bersama Duta Besar Pakistan (2024)
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Peresmian Gedung Pertanian & Pascasarjana Unsika (2024)
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Forum Komunikasi FKIP se-Indonesia (2023)
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Pengukuhan PPG bagi Guru Dalam Jabatan (2024)
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Penyambutan Mahasiswa Inbound PMM Unsika (2024)
-                        </li>
-
-                    </ul>
+                    <div>
+                        <span class="skill-tag">Event</span>
+                        <span class="skill-tag">Protocol</span>
+                        <span class="skill-tag">Event Organizer</span>
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
 
+            <div class="col-lg-4 reveal">
 
-        <!-- PUBLIC RELATIONS -->
-        <div class="col-md-4 mb-4">
+                <div class="modern-card">
 
-            <div class="card h-100">
+                    <div class="icon-box">
+                        <i class="bi bi-megaphone-fill"></i>
+                    </div>
 
-                <div class="card-header bg-primary-custom text-white">
-
-                    <h4 class="mb-0">
+                    <h4 class="fw-bold">
                         Public Relations
                     </h4>
 
-                </div>
+                    <p class="text-muted">
+                        Memiliki pengalaman dalam komunikasi,
+                        hubungan masyarakat, dan kegiatan organisasi.
+                    </p>
 
-                <div class="card-body">
-
-                    <ul class="list-unstyled">
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Kegiatan KKN Desa Setialaksana Cabangbungin
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Sekolah Legislasi
-                        </li>
-
-                        <li class="mb-2">
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Jurnalistik PBSI Goes to Trans 7
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill text-primary-custom me-2"></i>
-                            Latihan Keorganisasian Pengurus
-                        </li>
-
-                    </ul>
+                    <div>
+                        <span class="skill-tag">PR</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Networking</span>
+                    </div>
 
                 </div>
 
@@ -1099,99 +1203,101 @@
 
     </div>
 
-</div>
-
-
 </section>
 
-<!-- =====================================================
-     EDUCATION SECTION
-===================================================== -->
 
-<section id="education" class="py-5 bg-light">
+<!-- ================= EDUCATION ================= -->
+
+<section id="education" style="background:#fff5f3;">
+
+    <div class="container">
+
+        <div class="section-heading text-center reveal">
+
+            <div class="section-label">
+                Education
+            </div>
+
+            <h2 class="section-title">
+                Pendidikan
+            </h2>
+
+            <div class="section-line mx-auto"></div>
+
+        </div>
 
 
-<div class="container">
+        <div class="row g-4">
 
-    <div class="row">
+            <div class="col-lg-6 reveal">
 
-        <!-- PENDIDIKAN -->
-        <div class="col-md-6 mb-4">
+                <div class="modern-card">
 
-            <div class="card h-100">
+                    <div class="icon-box">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
 
-                <div class="card-header bg-primary-custom text-white">
-
-                    <h4 class="mb-0">
-                        Pendidikan
+                    <h4 class="fw-bold mb-4">
+                        Riwayat Pendidikan
                     </h4>
 
-                </div>
+                    <div class="timeline">
 
-                <div class="card-body">
+                        <div class="timeline-item">
+                            <h5>PAUD Mawar Jaya</h5>
+                        </div>
 
-                    <ul class="list-group list-group-flush">
+                        <div class="timeline-item">
+                            <h5>SDN Bojongmangu 02</h5>
+                        </div>
 
-                        <li class="list-group-item">
-                            PAUD Mawar Jaya
-                        </li>
+                        <div class="timeline-item">
+                            <h5>SMPN 1 Bojongmangu</h5>
+                        </div>
 
-                        <li class="list-group-item">
-                            SDN Bojongmangu 02
-                        </li>
+                        <div class="timeline-item">
+                            <h5>SMAN 1 Bojongmangu</h5>
+                        </div>
 
-                        <li class="list-group-item">
-                            SMPN 1 Bojongmangu
-                        </li>
+                        <div class="timeline-item">
+                            <h5>
+                                Universitas Singaperbangsa Karawang
+                            </h5>
 
-                        <li class="list-group-item">
-                            SMAN 1 Bojongmangu
-                        </li>
-
-                        <li class="list-group-item">
-                            Universitas Singaperbangsa Karawang
-                            <br>
-                            <small class="text-muted">
+                            <p>
                                 S1 Pendidikan Bahasa dan Sastra Indonesia
-                            </small>
-                        </li>
+                            </p>
+                        </div>
 
-                    </ul>
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
 
+            <div class="col-lg-6 reveal">
 
-        <!-- SERTIFIKASI -->
-        <div class="col-md-6 mb-4">
+                <div class="modern-card">
 
-            <div class="card h-100">
+                    <div class="icon-box">
+                        <i class="bi bi-award-fill"></i>
+                    </div>
 
-                <div class="card-header bg-primary-custom text-white">
-
-                    <h4 class="mb-0">
+                    <h4 class="fw-bold">
                         Sertifikasi & Pelatihan
                     </h4>
 
-                </div>
+                    <div class="mt-4">
 
-                <div class="card-body">
-
-                    <div class="mb-4">
-
-                        <h5 class="card-title">
+                        <h5 class="fw-bold">
                             Pelatihan Keprotokoleran
                         </h5>
 
-                        <p class="mb-0">
-
+                        <p class="text-muted">
                             Diselenggarakan oleh Korps Protokoler
                             Mahasiswa FKIP Unsika dan Korps Protokoler
                             Mahasiswa Jawa Barat & DKI Jakarta.
-
                         </p>
 
                     </div>
@@ -1204,255 +1310,151 @@
 
     </div>
 
-</div>
-
-
 </section>
 
-<!-- =====================================================
-     PUBLICATION SECTION
-===================================================== -->
 
-<section id="achievements" class="py-5">
+<!-- ================= PUBLICATION ================= -->
 
+<section id="publication">
 
-<div class="container">
+    <div class="container">
 
-    <h2 class="section-title">
-        Publikasi Ilmiah
-    </h2>
+        <div class="section-heading text-center reveal">
 
+            <div class="section-label">
+                Academic
+            </div>
 
-    <div class="row">
+            <h2 class="section-title">
+                Publikasi Ilmiah
+            </h2>
+
+            <div class="section-line mx-auto"></div>
+
+        </div>
+
 
         <div class="col-lg-10 mx-auto">
 
+            <div class="modern-card publication mb-4 reveal">
 
-            <!-- =========================
-                 SINTA 5 - 1
-            ========================== -->
-            <div class="card publication-card mb-4">
+                <span class="badge-modern">
+                    SINTA 5
+                </span>
 
-                <div class="card-body">
-
-                    <div class="d-flex gap-3">
-
-                        <div class="publication-index">
-                            1
-                        </div>
-
-                        <div>
-
-                            <span class="sinta-badge">
-                                SINTA 5
-                            </span>
-
-                            <h5 class="publication-title">
-
-                                "Perjuangan Tokoh Utama dalam Menggapai
-                                Impian pada Novel Home Sweet Loan karya
-                                Almira Bastari dan Sang Alkemis karya
-                                Paulo Coelho: Kajian Sastra Bandingan"
-
-                            </h5>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <h5 class="mt-3 fw-bold">
+                    Perjuangan Tokoh Utama dalam Menggapai Impian
+                    pada Novel Home Sweet Loan karya Almira Bastari
+                    dan Sang Alkemis karya Paulo Coelho:
+                    Kajian Sastra Bandingan
+                </h5>
 
             </div>
 
 
-            <!-- =========================
-                 SINTA 5 - 2
-            ========================== -->
-            <div class="card publication-card mb-4">
+            <div class="modern-card publication mb-4 reveal">
 
-                <div class="card-body">
+                <span class="badge-modern">
+                    SINTA 5
+                </span>
 
-                    <div class="d-flex gap-3">
-
-                        <div class="publication-index">
-                            2
-                        </div>
-
-                        <div>
-
-                            <span class="sinta-badge">
-                                SINTA 5
-                            </span>
-
-                            <h5 class="publication-title">
-
-                                "Analisis Wacana Kritis Model Teun A.
-                                Van Dijk Terhadap Pemberitaan Daring
-                                Mengenai Wacana Sistem Zonasi Oleh
-                                Nadiem Makarim di Portal Berita
-                                Metrotvnews.com"
-
-                            </h5>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <h5 class="mt-3 fw-bold">
+                    Analisis Wacana Kritis Model Teun A. Van Dijk
+                    Terhadap Pemberitaan Daring Mengenai Wacana
+                    Sistem Zonasi Oleh Nadiem Makarim di Portal
+                    Berita Metrotvnews.com
+                </h5>
 
             </div>
 
 
-            <!-- =========================
-                 SINTA 4
-            ========================== -->
-            <div class="card publication-card mb-4">
+            <div class="modern-card publication mb-4 reveal">
 
-                <div class="card-body">
+                <span class="badge-modern">
+                    SINTA 4
+                </span>
 
-                    <div class="d-flex gap-3">
-
-                        <div class="publication-index">
-                            3
-                        </div>
-
-                        <div>
-
-                            <span class="sinta-badge">
-                                SINTA 4
-                            </span>
-
-                            <h5 class="publication-title">
-
-                                Analisis Diksi dan Gaya Bahasa pada
-                                Spanduk Pedagang Kaki Lima di Desa
-                                Sukabungah Kabupaten Bekasi sebagai
-                                Rekomendasi Bahan Ajar Materi Bahasa
-                                Indonesia di SMP
-
-                            </h5>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <h5 class="mt-3 fw-bold">
+                    Analisis Diksi dan Gaya Bahasa pada Spanduk
+                    Pedagang Kaki Lima di Desa Sukabungah Kabupaten
+                    Bekasi sebagai Rekomendasi Bahan Ajar Materi
+                    Bahasa Indonesia di SMP
+                </h5>
 
             </div>
 
 
-            <!-- =========================
-                 SINTA 3
-            ========================== -->
-            <div class="card publication-card mb-4">
+            <div class="modern-card publication mb-4 reveal">
 
-                <div class="card-body">
+                <span class="badge-modern">
+                    SINTA 3
+                </span>
 
-                    <div class="d-flex gap-3">
-
-                        <div class="publication-index">
-                            4
-                        </div>
-
-                        <div>
-
-                            <span class="sinta-badge">
-                                SINTA 3
-                            </span>
-
-                            <h5 class="publication-title">
-
-                                Pembinaan Bahasa Indonesia melalui
-                                Literasi Interaktif di TBM Pustaka
-                                Berkiprah Kabupaten Karawang
-
-                            </h5>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <h5 class="mt-3 fw-bold">
+                    Pembinaan Bahasa Indonesia melalui Literasi
+                    Interaktif di TBM Pustaka Berkiprah Kabupaten
+                    Karawang
+                </h5>
 
             </div>
 
 
-            <!-- =========================
-                 NON SINTA
-            ========================== -->
-            <div class="card publication-card mb-4">
+            <div class="modern-card publication reveal">
 
-                <div class="card-body">
+                <span class="badge-modern">
+                    Non-SINTA
+                </span>
 
-                    <div class="d-flex gap-3">
-
-                        <div class="publication-index">
-                            5
-                        </div>
-
-                        <div>
-
-                            <span class="non-sinta-badge">
-                                Non-SINTA
-                            </span>
-
-                            <h5 class="publication-title">
-
-                                "Analisis Framing Model Zhongdang Pan
-                                dan Gerald M. Kosicki terhadap
-                                Pemberitaan Peringatan Hari Guru
-                                Nasional 2024 pada Media Online
-                                Sokoguru.id dan MediaIndonesia.com"
-
-                            </h5>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <h5 class="mt-3 fw-bold">
+                    Analisis Framing Model Zhongdang Pan dan Gerald M.
+                    Kosicki terhadap Pemberitaan Peringatan Hari Guru
+                    Nasional 2024 pada Media Online Sokoguru.id dan
+                    MediaIndonesia.com
+                </h5>
 
             </div>
-
 
         </div>
 
     </div>
 
-</div>
-
-
 </section>
 
-<!-- =====================================================
-     CONTACT SECTION
-===================================================== -->
 
-<section id="contact" class="py-5 bg-light">
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-card reveal">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <span class="text-white-50">
+                        CONTACT ME
+                    </span>
+
+                    <h2 class="display-5 fw-bold mt-2">
+                        Mari Terhubung
+                    </h2>
+
+                    <p class="mt-3 opacity-75">
+                        Terbuka untuk kesempatan mengajar,
+                        kegiatan pendidikan, public speaking,
+                        event, dan kolaborasi lainnya.
+                    </p>
+
+                </div>
 
 
-<div class="container">
-
-    <h2 class="section-title">
-        Hubungi Saya
-    </h2>
-
-    <div class="row justify-content-center">
-
-        <div class="col-md-8">
-
-            <div class="card">
-
-                <div class="card-body p-4">
-
-                    <h4 class="card-title text-primary-custom mb-4">
-                        Informasi Kontak
-                    </h4>
-
+                <div class="col-lg-6 mt-4 mt-lg-0">
 
                     <div class="contact-item">
 
-                        <i class="bi bi-telephone-fill text-primary-custom"></i>
+                        <i class="bi bi-telephone-fill"></i>
 
                         <span>
                             +6285775104241
@@ -1463,7 +1465,7 @@
 
                     <div class="contact-item">
 
-                        <i class="bi bi-envelope-fill text-primary-custom"></i>
+                        <i class="bi bi-envelope-fill"></i>
 
                         <span>
                             layungsitinurazizah929@gmail.com
@@ -1474,7 +1476,7 @@
 
                     <div class="contact-item">
 
-                        <i class="bi bi-geo-alt-fill text-primary-custom"></i>
+                        <i class="bi bi-geo-alt-fill"></i>
 
                         <span>
                             Bekasi, Jawa Barat
@@ -1483,18 +1485,13 @@
                     </div>
 
 
-                    <div class="mt-4">
+                    <a href="#"
+                       class="btn btn-light btn-modern mt-2">
 
-                        <a
-                            href="#"
-                            class="btn btn-outline-primary-custom me-2"
-                            aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                        Instagram
 
-                            <i class="bi bi-instagram"></i>
-
-                        </a>
-
-                    </div>
+                    </a>
 
                 </div>
 
@@ -1504,37 +1501,60 @@
 
     </div>
 
-</div>
-
-
 </section>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
-<footer class="py-4 bg-primary-custom text-white">
+<!-- ================= FOOTER ================= -->
 
+<footer>
 
-<div class="container text-center">
+    <div class="container text-center">
 
-    <p class="mb-0">
+        <p class="mb-0">
+            © 2026 Layung Siti Nurazizah.
+            All Rights Reserved.
+        </p>
 
-        &copy; 2026 Layung Siti Nurazizah.
-        All Rights Reserved.
-
-    </p>
-
-</div>
-
+    </div>
 
 </footer>
 
-<!-- =====================================================
-     BOOTSTRAP JAVASCRIPT
-===================================================== -->
+
+<!-- ================= BOOTSTRAP JS ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- ================= ANIMATION ================= -->
+
+<script>
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    reveals.forEach(element => {
+        observer.observe(element);
+    });
+
+</script>
 
 </body>
 </html>
